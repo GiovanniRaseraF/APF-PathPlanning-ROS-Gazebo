@@ -3,32 +3,26 @@ import matplotlib.pyplot as plt
 import time
 
 #drone
-drone = [10, 10]
+drone = np.array([10, 10])
+goal = np.array([40, 40])
 
 s = 15
 r=2
-"""
-    Inside the nested loop, distance from each point to the goal and ostacle is 
-    calculated, Similarly angles are calculated. 
-    α = 50
-    β = 50
-    s = 15
-    r = 2
-"""
 
+# epsilon
+epsilon = 1
+
+# plotting
 plt.ion()
-figure = plt.figure()
 
 def draw():
   x = np.arange(-0,50,1)
   y = np.arange(-0,50,1)
 
-  # Goal is at (40,40) 
-  goal = [40,40]
+  # obstacle
+  obstacle = np.array([20, 20])
 
-  #obstacle is at(25,25)
-  obstacle = [20, 20]
-
+  # field
   X, Y = np.meshgrid(x,y)
 
   delx = np.zeros_like(X)
@@ -87,10 +81,8 @@ def draw():
   ax.add_patch(plt.Circle(drone, r, color='r'))
   ax.annotate("Drone", xy=drone, fontsize=7, ha="center")
 
-  ax.set_title('Combined Potential when Goal and Obstacle are different ')
-
-  for i in zip(delx, dely):
-    print(i)
+  fig.canvas.draw()
+  fig.canvas.flush_events()
 
 #####################qui di seguito: ROBOT motion nel PF ##############################
 ## creare una funzione di espone per vettori
@@ -112,10 +104,18 @@ def draw():
 #   Tstardrone = argmin(Tdrone, c(drone + Tdrone*Ddrone, goal))
 
 #   # update posizion
+
+# distance
+def distance(x, y):
+  dist = np.linalg.norm(x - y)
+  return dist
+
+def c(d, g):
+  ret = np.power(d-g, 2)
+  return ret
+
 # movimento a caso
-for i in range(0, 30):
-  drone = (i, i)
+while distance(drone, goal) > epsilon:
   draw()
-  figure.canvas.draw()
-  figure.canvas.flush_events()
-  time.sleep(1)
+  a = input()
+  

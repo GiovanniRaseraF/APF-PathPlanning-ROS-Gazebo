@@ -1,3 +1,9 @@
+#
+# Authors: 
+#   - Giovanni Rasera
+#   - Diletta Giabardo
+#
+
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -15,6 +21,10 @@ epsilon = 1
 # plotting
 plt.ion()
 
+# IMPORTANT
+# This function draws and creates the field
+# Just for testing and quick prototype dev
+#
 def draw():
   x = np.arange(-0,50,1)
   y = np.arange(-0,50,1)
@@ -31,11 +41,9 @@ def draw():
   # creazione del potential field
   for i in range(len(x)):
     for j in range(len(y)):
-    
       # finding the goal distance and obstacle distance
       d_goal = np.sqrt((goal[0]-X[i][j])**2 + ((goal[1]-Y[i][j]))**2)
       d_obstacle = np.sqrt((obstacle[0]-X[i][j])**2 + (obstacle[1]-Y[i][j])**2)
-      #print(f"{i} and {j}")
 
       #finding theta correspoding to the goal and obstacle 
       theta_goal= np.arctan2(goal[1] - Y[i][j], goal[0]  - X[i][j])
@@ -84,27 +92,6 @@ def draw():
   fig.canvas.draw()
   fig.canvas.flush_events()
 
-#####################qui di seguito: ROBOT motion nel PF ##############################
-## creare una funzione di espone per vettori
-# def c(drone, goal):
-#   return np.pow(drone-goal, 2)
-
-# epsilon = 1
-# while || drone - goal || > epsilon:
-#   # compute gradient of the cost function  
-#   cdrone = c(drone, goal)
-#   DerivXcdrone = PDerive(cdrone, "x")
-#   DerivYcdrone = PDerive(cdrone, "y")
-#   DeltaCdrone = Traspose(DerivXcdrone, DerivXcdrone)
-
-#   # take the opposite direction
-#   Ddrone = - DeltaCdrone / || DeltaCdrone ||
-
-#   # compute the time step
-#   Tstardrone = argmin(Tdrone, c(drone + Tdrone*Ddrone, goal))
-
-#   # update posizion
-
 # distance
 def distance(x, y):
   dist = np.linalg.norm(x - y)
@@ -116,6 +103,17 @@ def c(d, g):
 
 # movimento a caso
 while distance(drone, goal) > epsilon:
+  # 1. compute the gradient decent of the cost function
+  # 2. take the oppotite direction
+  # 3. compute the time step
+  # 4. update drone position
+
+  # IO
   draw()
+
+  # input to slow execution
   a = input()
+
+  # close to prevent opening
+  plt.close()
   

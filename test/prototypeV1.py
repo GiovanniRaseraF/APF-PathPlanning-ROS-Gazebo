@@ -9,12 +9,27 @@ import matplotlib.pyplot as plt
 import time
 import math
 
+# initial input
+dx = int(input("DroneX: "))
+dy = int(input("DroneY: "))
+
+ox = int(input("ObstX: "))
+oy = int(input("ObstY: "))
+
+gx = int(input("GoalX: "))
+gy = int(input("GoalY: "))
+
 #drone
-drone = np.array([1, 14])
-goal = np.array([40, 20])
+drone = np.array([dx, dy])
+goal = np.array([gx, gy])
+obstacle = np.array([ox, oy])
+
+# history
+dronePosesX = []
+dronePosesY = []
 
 s = 15
-r = 0.5
+r = 2
 
 # epsilon
 epsilon = 1
@@ -29,14 +44,7 @@ dely = np.zeros_like(Y)
 # plotting
 plt.ion()
 
-# IMPORTANT
-# This function draws and creates the field
-# Just for testing and quick prototype dev
-#
-def draw():
-  # obstacle
-  obstacle = np.array([20, 20])
-
+def calcForceField():
   # creazione del potential field
   for i in range(len(x)):
     for j in range(len(y)):
@@ -73,11 +81,12 @@ def draw():
           delx[i][j] = 50 * s * np.cos(theta_goal)
           dely[i][j] = 50 * s * np.sin(theta_goal)
 
+def draw():
   fig, ax = plt.subplots(figsize=(10, 10))
   ax.quiver(X, Y, delx, dely)
 
   #obstacle
-  ax.add_patch(plt.Circle(obstacle, r*2, color='y'))
+  ax.add_patch(plt.Circle(obstacle, r, color='y'))
   ax.annotate("Obstacle", xy=obstacle, fontsize=8, ha="center")
 
   #goal
@@ -87,6 +96,7 @@ def draw():
   #drone
   ax.add_patch(plt.Circle(drone, r, color='r'))
   ax.annotate("Drone", xy=drone, fontsize=1, ha="center")
+  ax.plot(dronePosesX, dronePosesY, label="poses", linestyle="-")
 
   fig.canvas.draw()
   fig.canvas.flush_events()
@@ -100,10 +110,21 @@ def c(d, g):
   ret = np.power(d-g, 2)
   return ret
 
-# distance(x, y) = || x - y ||
+# create force field
+calcForceField()
+
+maxForseX = delx.max()
+maxForseY = dely.max()
+
+# counter
+counter = 0
 
 # movimento a caso
-while distance(drone, goal) > epsilon:
+while distance(drone, goal) > epsilon+4:
+  # store position
+  dronePosesX.append(drone[0])
+  dronePosesY.append(drone[1])
+
   # 1. compute the gradient decent of the cost function
   ck = np.array([0, 0])
   ck[0] = c(drone, goal)[0] # / dx # dx of c(xk)
@@ -118,23 +139,43 @@ while distance(drone, goal) > epsilon:
   # 2.1 fake movement
   droneGridPos = np.array([math.floor(drone[0]), math.floor(drone[1])])
   forceOnDrone = np.array([
-    delx[droneGridPos[0]][droneGridPos[1]], 
-    dely[droneGridPos[0]][droneGridPos[1]]
+    delx[droneGridPos[1]][droneGridPos[0]], 
+    dely[droneGridPos[1]][droneGridPos[0]]
   ])
+
+  # calculate force to apply
+  realForceOnDrone = (np.array([
+    forceOnDrone[0] / maxForseX,
+    forceOnDrone[1] / maxForseY
+  ]))
+
   print(f"droneGridPos: {droneGridPos}")
   print(f"forceOnDrone: {forceOnDrone}")
+  print(f"realForceOnDrone: {realForceOnDrone}")
+  
+  drone = drone + realForceOnDrone
 
-  drone = drone - Dk
+  if(drone[0]>= 50 or drone[1] >= 50):
+    break
 
+  if(counter % 30 == 0):
+    draw()
+    i = input()
+    plt.close()
+
+  counter+=1
+
+  print(f"dronePos: {drone}")
   # 3. compute the time step
   # 4. update drone position
 
-  # IO
-  draw()
 
-  # input to slow execution
-  a = input()
+# IO
+draw()
 
-  # close to prevent opening
-  plt.close()
+# input to slow execution
+a = input("Exit> ")
+
+# close to prevent opening
+plt.close()
   

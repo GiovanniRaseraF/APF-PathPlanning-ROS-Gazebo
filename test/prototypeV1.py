@@ -28,7 +28,8 @@ obstacle = np.array([ox, oy])
 dronePosesX = []
 dronePosesY = []
 
-s = 15
+# intensity modeling
+s = 15  # 
 r = 2
 
 # epsilon
@@ -40,6 +41,8 @@ y = np.arange(-0,50,1)
 X, Y = np.meshgrid(x,y)
 delx = np.zeros_like(X)
 dely = np.zeros_like(Y)
+
+REP_FORCE = 300
 
 # plotting
 plt.ion()
@@ -58,12 +61,15 @@ def calcForceField():
       if d_obstacle < r:
         delx[i][j] = np.sign(np.cos(theta_obstacle)) +0
         dely[i][j] = np.sign(np.cos(theta_obstacle))  +0
+
       elif d_obstacle>r+s:
         delx[i][j] = 0 +(50 * s *np.cos(theta_obstacle))
         dely[i][j] = 0 + (50 * s *np.sin(theta_goal))
+
       elif d_obstacle<r+s :
-        delx[i][j] = -120 *(s+r-d_obstacle)* np.cos(theta_obstacle)
-        dely[i][j] = -120 * (s+r-d_obstacle)*  np.sin(theta_obstacle) 
+        delx[i][j] = -REP_FORCE * (s+r-d_obstacle)* np.cos(theta_obstacle)
+        dely[i][j] = -REP_FORCE * (s+r-d_obstacle)*  np.sin(theta_obstacle) 
+
       if d_goal <r+s:
         if delx[i][j] != 0:
           delx[i][j]  += (50 * (d_goal-r) *np.cos(theta_goal))

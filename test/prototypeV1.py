@@ -39,9 +39,12 @@ r = 2
 # epsilon
 epsilon = 1
 
+# gridSize
+gridSize = 100
+
 # field
-x = np.arange(-0,50,1)
-y = np.arange(-0,50,1)
+x = np.arange(-0,gridSize,1)
+y = np.arange(-0,gridSize,1)
 X, Y = np.meshgrid(x,y)
 delx = np.zeros_like(X)
 dely = np.zeros_like(Y)
@@ -165,7 +168,7 @@ while distance(drone, goal) > epsilon:
   if(drone[0]>= 50 or drone[1] >= 50):
     break
 
-  if(counter % 30 == 0):
+  if(counter % 60 == 0):
     draw()
     i = input()
     plt.close()

@@ -1,6 +1,6 @@
 # Specifiche di progetto
 - Ambiente di sviluppo : ROS2 + Gazebo
-- Simulatore drone Gazebo : PX4
+- Simulatore drone Gazebo : (sjtu_drone/docker version)[https://github.com/GiovanniRaseraF/sjtu_drone_apf_speed_control]
 - Algoritmo Path Planning: Artificial Potential Field
 
 ## Configurazione degli scenari:

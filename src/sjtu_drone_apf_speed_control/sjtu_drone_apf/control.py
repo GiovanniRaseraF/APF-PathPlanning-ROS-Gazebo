@@ -52,6 +52,9 @@ class APFConrolNode(Node):
 
         print(f"fx: {fx}")
         print(f"fy: {fy}")
+        
+        # read speed from field
+        #x_speed, y_speed = 
 
 
 

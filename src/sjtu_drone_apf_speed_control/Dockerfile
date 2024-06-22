@@ -19,6 +19,10 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` 
     && apt-get clean
 RUN rosdep init && rosdep update
 
+RUN apt-get install python3 -y
+RUN apt-get install python3-pip -y
+RUN pip install numpy
+
 RUN mkdir -p /ros2_ws/src
 COPY ./sjtu_drone_description /ros2_ws/src/sjtu_drone_description
 COPY ./sjtu_drone_bringup /ros2_ws/src/sjtu_drone_bringup

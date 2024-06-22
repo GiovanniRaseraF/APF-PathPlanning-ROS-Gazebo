@@ -57,6 +57,9 @@ class APFConrolNode(Node):
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy)
 
+        print(f"x_speed: {x_speed}")
+        print(f"y_speed: {y_speed}")
+
 # run loop
 def main(args=None):
     rclpy.init(args=args)

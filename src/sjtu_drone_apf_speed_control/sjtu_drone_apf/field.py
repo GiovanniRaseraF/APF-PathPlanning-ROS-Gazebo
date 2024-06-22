@@ -10,9 +10,9 @@ import time
 import math
 
 #drone
-drone = np.array([0, 0])
+drone = np.array([25, 0])
 goal = np.array([25, 50])
-obstacle = np.array([0, 0])
+obstacle = np.array([25, 0])
 
 # history
 dronePosesX = []
@@ -30,7 +30,7 @@ r = 2
 epsilon = 1
 
 # gridSize
-gridSize = 100
+gridSize = 50
 
 # field
 x = np.arange(-0,gridSize,1)
@@ -71,3 +71,10 @@ def calcForceField():
         if d_goal>=r+s:
           delx[i][j] += 50* s *np.cos(theta_goal)
           dely[i][j] += 50* s *np.sin(theta_goal)
+
+
+def get_field_power(x: int, y: int):
+  ret_x_speed = 0
+  ret_y_speed = 0
+
+  return ret_x_speed, ret_y_speed

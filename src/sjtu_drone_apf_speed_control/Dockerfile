@@ -19,6 +19,7 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` 
     && apt-get clean
 RUN rosdep init && rosdep update
 
+# install python3 and numpy
 RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 RUN pip install numpy

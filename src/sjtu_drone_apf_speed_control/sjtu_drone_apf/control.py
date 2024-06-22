@@ -13,6 +13,7 @@ from sensor_msgs.msg import Range, Image, Imu
 
 # positioning
 from converter_position import *
+from field import *
 
 # this is to test different types of topics
 prefix = "/simple_drone/"
@@ -54,9 +55,7 @@ class APFConrolNode(Node):
         print(f"fy: {fy}")
         
         # read speed from field
-        #x_speed, y_speed = 
-
-
+        x_speed, y_speed = get_field_power(fx, fy)
 
 # run loop
 def main(args=None):

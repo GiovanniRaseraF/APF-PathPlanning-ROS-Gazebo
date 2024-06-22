@@ -23,6 +23,9 @@ class APFConrolNode(Node):
         self.pose = None
         super().__init__('apf_control')
 
+        # Control speed
+        self.cmd_vel_publisher = self.create_publisher(Twist, f'{prefix}cmd_vel', 10)
+
         # Drone positioning
         self.sub_gt_pose = self.create_subscription(Pose, f"{prefix}gt_pose", self.cb_gt_pose, 10)
 
@@ -59,6 +62,22 @@ class APFConrolNode(Node):
 
         print(f"x_speed: {x_speed}")
         print(f"y_speed: {y_speed}")
+
+        linear_vec = Vector3()
+        linear_vec.x = x_speed
+        linear_vec.y = y_speed
+
+        # Actuate
+        self.publish_cmd_vel(linear_vec=linear_vec)
+
+    # Speed write
+    def publish_cmd_vel(self, linear_vec: Vector3 = Vector3(), angular_vec: Vector3 = Vector3()) -> None:
+        """
+        Publish a Twist message to cmd_vel topic
+        """
+        twist = Twist(linear=linear_vec, angular=angular_vec)
+        print(twist)
+        self.cmd_vel_publisher.publish(twist)
 
 # run loop
 def main(args=None):

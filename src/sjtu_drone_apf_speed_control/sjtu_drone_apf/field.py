@@ -74,7 +74,7 @@ def calcForceField():
 
 
 def get_field_power(x: int, y: int):
-  ret_x_speed = 0
-  ret_y_speed = 0
+  ret_x_speed = 0.3
+  ret_y_speed = 0.0
 
   return ret_x_speed, ret_y_speed

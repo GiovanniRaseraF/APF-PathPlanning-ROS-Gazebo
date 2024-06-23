@@ -82,8 +82,14 @@ class APFConrolNode(Node):
 # run loop
 def main(args=None):
     rclpy.init(args=args)
+
+    # create field
+    calcForceField()
+
+    # run node
     apf_control_node = APFConrolNode()
     rclpy.spin(apf_control_node)
+
     apf_control_node.destroy_node()
     rclpy.shutdown()
 

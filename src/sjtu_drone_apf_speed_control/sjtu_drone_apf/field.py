@@ -74,7 +74,34 @@ def calcForceField():
 
 
 def get_field_power(x: int, y: int):
-  ret_x_speed = 0.3
-  ret_y_speed = 0.0
+  # scaling
+  maxForseX = delx.max()
+  maxForseY = dely.max()
+
+  if(x < 0): x = 0
+  if(x > 49): x = 49 
+  if(y < 0): y = 0
+  if(y > 49): y = 49 
+
+  # debug
+  print(x)
+  print(y)
+
+  # positioning
+  droneGridPos = np.array([math.floor(x), math.floor(y)])
+  forceOnDrone = np.array([
+    delx[droneGridPos[1]][droneGridPos[0]], 
+    dely[droneGridPos[1]][droneGridPos[0]]
+  ])
+
+  # calculate force to apply
+  realForceOnDrone = (np.array([
+    forceOnDrone[0] / maxForseX,
+    forceOnDrone[1] / maxForseY
+  ]))
+
+  # actual speed
+  ret_x_speed = realForceOnDrone[0]
+  ret_y_speed = realForceOnDrone[1]
 
   return ret_x_speed, ret_y_speed

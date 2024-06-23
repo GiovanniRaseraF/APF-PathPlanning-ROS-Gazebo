@@ -13,10 +13,18 @@ pmaxy = 50
 pminx = 0
 pminy = 0
 
-def gazebo_to_python(gx, gy):
-    
-    px = Math.floor(((gx - gminx) * (pmaxx - pminx) / (gmaxx - gminx)) + pminx)
-    py = Math.floor(((gy - gminy) * (pmaxy - pminy) / (gmaxy - gminy)) + pminy)
+def gazebo_to_python(gx, gy): 
+    # x
+    abs_distance_x = abs(gmaxx) - abs(gminx)
+    abs_distance_drone_x = abs_distance_x - (abs(gmaxx) - abs(gx))
+    div_len_x = abs_distance_x / pmaxx
+    px = Math.floor(abs_distance_drone_x / div_len_x)
+
+    # y
+    abs_distance_y = abs(gmaxy) - abs(gminy)
+    abs_distance_drone_y = abs_distance_y - (abs(gmaxy) - abs(gy))
+    div_len_y = abs_distance_y / pmaxy
+    py = Math.floor(abs_distance_drone_y / div_len_y) 
 
     return px, py
 

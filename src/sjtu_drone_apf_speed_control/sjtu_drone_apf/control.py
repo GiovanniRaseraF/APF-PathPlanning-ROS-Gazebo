@@ -50,22 +50,25 @@ class APFConrolNode(Node):
         pos = p.position
         x = pos.x
         y = pos.y
+        scale_x =  -1 if x < 0 else 1
+        scale_y =  -1 if y < 0 else 1
 
         # calculate field positioning
         fx, fy = gazebo_to_python(x, y)
 
         print(f"fx: {fx}")
         print(f"fy: {fy}")
-        
+
+
         # read speed from field
-        x_speed, y_speed = get_field_power(fx, fy)
+        x_speed, y_speed = get_field_power(fx, fy, scale_x=scale_x, scale_y=scale_y)
 
         print(f"x_speed: {x_speed}")
         print(f"y_speed: {y_speed}")
 
         linear_vec = Vector3()
-        linear_vec.x = x_speed
-        linear_vec.y = y_speed
+        linear_vec.x = y_speed * scale_y
+        linear_vec.y = x_speed * scale_x
 
         # Actuate
         self.publish_cmd_vel(linear_vec=linear_vec)

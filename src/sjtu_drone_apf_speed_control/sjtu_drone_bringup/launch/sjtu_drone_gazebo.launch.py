@@ -56,7 +56,8 @@ def generate_launch_description():
         #"worlds", "playground.world"
         #"worlds", "playground.world_cleaned"
         #"worlds", "start_pos_drone.world"
-        "worlds", "marker_and_goals.world"
+        #"worlds", "marker_and_goals.world"
+        "worlds", "shifted.world"
     )
 
     def launch_gzclient(context, *args, **kwargs):

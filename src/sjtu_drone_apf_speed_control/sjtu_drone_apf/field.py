@@ -12,7 +12,7 @@ import math
 #drone
 drone = np.array([25, 0])
 goal = np.array([25, 50])
-obstacle = np.array([25, 0])
+obstacle = np.array([25, 25])
 
 # history
 dronePosesX = []
@@ -73,10 +73,10 @@ def calcForceField():
           dely[i][j] += 50* s *np.sin(theta_goal)
 
 
-def get_field_power(x: int, y: int):
+def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
   # scaling
-  maxForseX = delx.max()
-  maxForseY = dely.max()
+  maxForseX = delx.max() / 2
+  maxForseY = dely.max() / 2
 
   if(x < 0): x = 0
   if(x > 49): x = 49 
@@ -88,16 +88,16 @@ def get_field_power(x: int, y: int):
   print(y)
 
   # positioning
-  droneGridPos = np.array([math.floor(x), math.floor(y)])
+  droneGridPos = np.array([math.floor(y), math.floor(x)])
   forceOnDrone = np.array([
-    delx[droneGridPos[1]][droneGridPos[0]], 
-    dely[droneGridPos[1]][droneGridPos[0]]
+    delx[x][y], 
+    dely[x][y]
   ])
 
   # calculate force to apply
   realForceOnDrone = (np.array([
-    forceOnDrone[0] / maxForseX,
-    forceOnDrone[1] / maxForseY
+    forceOnDrone[0] / maxForseX * scale_x,
+    forceOnDrone[1] / maxForseY * scale_y,
   ]))
 
   # actual speed

@@ -88,7 +88,6 @@ class APFConrolNode(Node):
         Publish a Twist message to cmd_vel topic
         """
         twist = Twist(linear=linear_vec, angular=angular_vec)
-        print(twist)
         self.cmd_vel_publisher.publish(twist)
     
     # calculate wich waypoint to activate
@@ -119,6 +118,8 @@ class APFConrolNode(Node):
 
                     # recalculate the field based on new positioning
                     setNewPositioning(newgoal=np.array([goal_x, goal_y]), newobstacle=np.array([obstacle_x, obstacle_y]))
+                    
+                    calcForceField()
 
 
 # run loop

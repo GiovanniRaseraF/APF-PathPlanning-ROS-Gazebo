@@ -42,8 +42,22 @@ dely = np.zeros_like(Y)
 REP_FORCE = 300
 
 def setNewPositioning(newgoal : np.array, newobstacle : np.array):
+  global drone
   global goal
-  global obstacle 
+  global obstacle
+
+  global dronePosesX
+  global dronePosesY
+
+  global flag_Goal
+  global flag_Obstacle
+
+  global x
+  global y
+  global X, Y
+  global delx
+  global dely
+  
   goal = newgoal
   obstacle = newobstacle
 

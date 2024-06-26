@@ -13,7 +13,7 @@
         },
         {
             "number": 2,
-            "goal_x": 25,
+            "goal_x": 10,
             "goal_y": 50,
             "obstacle_x": 40,
             "obstacle_y": 25,

@@ -1,6 +1,6 @@
-mkdir ./tmp
-curl -L https://github.com/osrf/gazebo_models/archive/refs/heads/master.zip -o ./tmp/gazebo_models.zip
-unzip ./tmp/gazebo_models.zip -d ./tmp
+mkdir ./cache
+curl -L https://github.com/osrf/gazebo_models/archive/refs/heads/master.zip -o ./cache/gazebo_models.zip
+unzip ./cache/gazebo_models.zip -d ./cache
 
 
 # on docker

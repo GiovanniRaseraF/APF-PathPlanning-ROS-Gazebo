@@ -11,6 +11,10 @@ from std_msgs.msg import Empty, Bool, Int8, String
 from geometry_msgs.msg import Twist, Pose, Vector3
 from sensor_msgs.msg import Range, Image, Imu
 
+import json
+
+
+
 # positioning
 from converter_position import *
 from field import *
@@ -28,6 +32,9 @@ class APFConrolNode(Node):
 
         # Drone positioning
         self.sub_gt_pose = self.create_subscription(Pose, f"{prefix}gt_pose", self.cb_gt_pose, 10)
+
+        # Waypoint 
+        self.current_waypoint = 0
 
     
     def cb_gt_pose(self, p):
@@ -53,12 +60,14 @@ class APFConrolNode(Node):
         scale_x =  -1 if x < 0 else 1
         scale_y =  -1 if y < 0 else 1
 
+        # waypointing system
+        self.calculate_waypoint(x, y)
+
         # calculate field positioning
         fx, fy = gazebo_to_python(x, y)
 
         print(f"fx: {fx}")
         print(f"fy: {fy}")
-
 
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy, scale_x=scale_x, scale_y=scale_y)
@@ -81,6 +90,36 @@ class APFConrolNode(Node):
         twist = Twist(linear=linear_vec, angular=angular_vec)
         print(twist)
         self.cmd_vel_publisher.publish(twist)
+    
+    # calculate wich waypoint to activate
+    def calculate_waypoint(self, x : float, y : float):
+        # read way points
+        waypoints_file = open('waypoints.json')
+        waypoints = json.load(waypoints_file)["waypoints"]
+         
+        # change interest on waypoint change
+        # the calculation in this case is simple
+        for w in waypoints:
+            number = w["number"]
+            goal_x = w["goal_x"]
+            goal_y = w["goal_y"]
+            obstacle_x =  w["obstacle_x"]
+            obstacle_y = w["obstacle_y"]
+            bound_min_x = w["bound_min_x"]
+            bound_max_x = w["bound_max_x"]
+            bound_min_y = w["bound_min_y"]
+            bound_max_y = w["bound_max_y"]
+
+            if(y > bound_min_y and y < bound_max_y):
+                print(f"Waypoint: {number}")
+                if(number != self.calculate_waypoint):
+                    self.current_waypoint = number
+                    # now we change objective !
+                    newBoundaries(bound_max_x, bound_min_x, bound_max_y, bound_min_y)
+
+                    # recalculate the field based on new positioning
+                    setNewPositioning(newgoal=np.array([goal_x, goal_y]), newobstacle=np.array([obstacle_x, obstacle_y]))
+
 
 # run loop
 def main(args=None):

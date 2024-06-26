@@ -1,0 +1,37 @@
+{
+    "waypoints": [
+        {
+            "number": 1,
+            "goal_x": 25,
+            "goal_y": 50,
+            "obstacle_x": 25,
+            "obstacle_y": 25,
+            "bound_min_x" : -9.26194,
+            "bound_max_x" : 9.42472,
+            "bound_min_y" : -9.39923,
+            "bound_max_y" : 9.27499
+        },
+        {
+            "number": 2,
+            "goal_x": 25,
+            "goal_y": 50,
+            "obstacle_x": 40,
+            "obstacle_y": 25,
+            "bound_min_x" : -9.26194,
+            "bound_max_x" : 9.42472,
+            "bound_min_y" : 9.27499,
+            "bound_max_y" : 29.399300
+        },
+        {
+            "number": 3,
+            "goal_x": 50,
+            "goal_y": 50,
+            "obstacle_x": 10,
+            "obstacle_y": 25,
+            "bound_min_x" : -9.26194,
+            "bound_max_x" : 9.42472,
+            "bound_min_y" : 29.399300,
+            "bound_max_y" : 49.145100
+        }
+    ]
+}

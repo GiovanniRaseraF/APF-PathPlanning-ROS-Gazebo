@@ -12,7 +12,7 @@ import math
 #drone
 drone = np.array([25, 0])
 goal = np.array([25, 50])
-obstacle = np.array([25, 25])
+obstacle = np.array([25, 10])
 
 # history
 dronePosesX = []
@@ -41,7 +41,31 @@ dely = np.zeros_like(Y)
 
 REP_FORCE = 300
 
+def setNewPositioning(newgoal : np.array, newobstacle : np.array):
+  global goal
+  global obstacle 
+  goal = newgoal
+  obstacle = newobstacle
+
+  calcForceField()
+
 def calcForceField():
+  global drone
+  global goal
+  global obstacle
+
+  global dronePosesX
+  global dronePosesY
+
+  global flag_Goal
+  global flag_Obstacle
+
+  global x
+  global y
+  global X, Y
+  global delx
+  global dely
+
   for i in range(len(x)):
     for j in range(len(y)):
       
@@ -74,9 +98,23 @@ def calcForceField():
 
 
 def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
+  global drone
+  global goal
+  global obstacle
+
+  global dronePosesX
+  global dronePosesY
+
+  global flag_Goal
+  global flag_Obstacle
+
+  global X, Y
+  global delx
+  global dely
+
   # scaling
-  maxForseX = delx.max() / 2
-  maxForseY = dely.max() / 2
+  maxForseX = delx.max()
+  maxForseY = dely.max()
 
   if(x < 0): x = 0
   if(x > 49): x = 49 
@@ -88,7 +126,6 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
   print(y)
 
   # positioning
-  droneGridPos = np.array([math.floor(y), math.floor(x)])
   forceOnDrone = np.array([
     delx[x][y], 
     dely[x][y]

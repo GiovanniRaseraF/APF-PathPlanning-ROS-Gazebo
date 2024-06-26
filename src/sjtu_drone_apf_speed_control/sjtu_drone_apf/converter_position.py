@@ -7,12 +7,25 @@ gmaxx = 9.42472
 gmaxy = 9.27499
 gminx = -9.26194
 gminy = -9.39923
+
 #python world
 pmaxx = 50
 pmaxy = 50
 pminx = 0
 pminy = 0
 
+# allow to change boundares for waypointing
+def newBoundaries(newgmaxx, newgminx, newgmaxy, newgminy):
+    global gmaxx
+    global gminx
+    global gmaxy
+    global gminy
+    gmaxx = newgmaxx
+    gminx = newgminx
+    gmaxy = newgmaxy
+    gminy = newgminy
+
+# convert from gazebo coordinates to matrix
 def gazebo_to_python(gx, gy): 
     # x
     abs_distance_x = abs(gmaxx - gminx)
@@ -20,7 +33,6 @@ def gazebo_to_python(gx, gy):
     div_len_x = abs_distance_x / pmaxx
     px = Math.floor(abs_distance_drone_x / div_len_x)
 
-     
     print(f"abs_distance_x:{abs_distance_x}")
     print(f"abs_distance_drone_x:{abs_distance_drone_x}")
     print(f"div_len_x:{div_len_x}")

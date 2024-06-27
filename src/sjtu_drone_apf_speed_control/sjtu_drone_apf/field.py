@@ -147,8 +147,8 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
 
   # calculate force to apply
   realForceOnDrone = (np.array([
-    forceOnDrone[0] / maxForseX * scale_x,
-    forceOnDrone[1] / maxForseY * scale_y,
+    forceOnDrone[0] / maxForseX,
+    forceOnDrone[1] / maxForseY,
   ]))
 
   # actual speed

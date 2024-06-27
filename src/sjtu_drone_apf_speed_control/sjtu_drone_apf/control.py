@@ -70,14 +70,15 @@ class APFConrolNode(Node):
         print(f"fy: {fy}")
 
         # read speed from field
-        x_speed, y_speed = get_field_power(fx, fy, scale_x=scale_x, scale_y=scale_y)
+        x_speed, y_speed = get_field_power(fx, fy, scale_x=1, scale_y=1)
 
-        print(f"x_speed: {x_speed}")
-        print(f"y_speed: {y_speed}")
+        print(f"x_speed: {y_speed}")
+        print(f"y_speed: {x_speed}")
 
         linear_vec = Vector3()
-        linear_vec.x = y_speed * scale_y
-        linear_vec.y = x_speed * scale_x
+        linear_vec.x = y_speed
+        linear_vec.y = x_speed
+
 
         # Actuate
         self.publish_cmd_vel(linear_vec=linear_vec)

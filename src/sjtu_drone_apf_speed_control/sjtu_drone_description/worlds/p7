@@ -89,390 +89,196 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='asphalt_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>0.027118 -0.028406 0 0 -0 0</pose>
-    </model>
     <state world_name='default'>
-      <sim_time>3333 597000000</sim_time>
-      <real_time>80 890894275</real_time>
-      <wall_time>1719410380 135233265</wall_time>
-      <iterations>80609</iterations>
+      <sim_time>10619 976000000</sim_time>
+      <real_time>1484 158328904</real_time>
+      <wall_time>1719585787 882470654</wall_time>
+      <iterations>1436555</iterations>
       <model name='/simple_drone'>
-        <pose>-0.229901 -9.22928 0.049996 -1.1e-05 1.7e-05 1.54139</pose>
+        <pose>1.32 14.0963 0.049999 -5e-06 -1e-06 0</pose>
         <scale>1 1 1</scale>
         <link name='base_footprint'>
-          <pose>-0.229901 -9.22928 0.049996 -1.1e-05 1.7e-05 1.54139</pose>
-          <velocity>-0 -0 -0.006796 -0.00871 -0.002147 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -14.4746 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 1'>
-        <pose>0.604761 -16.7584 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.604761 -16.7584 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 1_clone'>
-        <pose>16.0199 17.4303 0 0 -0 1.5389</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>16.0199 17.4303 0 0 -0 1.5389</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 1_clone_0'>
-        <pose>18.85 32.3358 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>18.85 32.3358 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 1_clone_1'>
-        <pose>-18.8322 52.5712 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-18.8322 52.5712 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 1_clone_2'>
-        <pose>13.2361 58.214 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>13.2361 58.214 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 2'>
-        <pose>-15.4778 25.5323 0 0 0 -1.58354</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-15.4778 25.5323 0 0 0 -1.58354</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 2_clone'>
-        <pose>14.9829 3.18615 0 0 0 -1.58354</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>14.9829 3.18615 0 0 0 -1.58354</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3'>
-        <pose>-12.4111 -3.6201 0 0 0 -1.54748</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-12.4111 -3.6201 0 0 0 -1.54748</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_0'>
-        <pose>-1.05108 55.9287 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1.05108 55.9287 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_0_clone'>
-        <pose>19.2952 41.5046 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>19.2952 41.5046 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_0_clone_0'>
-        <pose>21.8374 47.5252 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>21.8374 47.5252 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_clone'>
-        <pose>-12.4611 9.8236 0 0 0 -1.54748</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-12.4611 9.8236 0 0 0 -1.54748</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_clone_0'>
-        <pose>17.5619 -13.1629 0 0 0 -1.54748</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>17.5619 -13.1629 0 0 0 -1.54748</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='House 3_clone_clone'>
-        <pose>-13.4511 35.5433 0 0 0 -1.54748</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-13.4511 35.5433 0 0 0 -1.54748</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane'>
-        <pose>0.205623 -0.086039 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.205623 -0.086039 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane_clone'>
-        <pose>0.063745 19.795 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.063745 19.795 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane_clone_clone'>
-        <pose>0.155097 39.7404 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.155097 39.7404 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane_clone_clone_0'>
-        <pose>-20.2687 18.7019 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-20.2687 18.7019 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane_clone_clone_0_clone'>
-        <pose>-19.7029 0.150026 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-19.7029 0.150026 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.32 14.0963 0.049999 -5e-06 -1e-06 0</pose>
+          <velocity>0 0 -5.1e-05 -0.010471 -9e-05 0</velocity>
+          <acceleration>2e-06 8e-06 0.393753 1.70325 0.675263 -4e-05</acceleration>
+          <wrench>3e-06 1.2e-05 0.581573 0 -0 0</wrench>
         </link>
       </model>
       <model name='asphalt_plane_clone_clone_0_clone_0'>
-        <pose>0.344937 -19.9121 0 0 -0 0</pose>
+        <pose>10.051 10.1766 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.344937 -19.9121 0 0 -0 0</pose>
+          <pose>10.051 10.1766 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_1'>
-        <pose>-19.2904 -19.5361 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone'>
+        <pose>26.6378 11.777 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-19.2904 -19.5361 0 0 -0 0</pose>
+          <pose>26.6378 11.777 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_10'>
-        <pose>13.6089 50.2386 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone'>
+        <pose>10.0086 -3.1862 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>13.6089 50.2386 0 0 -0 0</pose>
+          <pose>10.0086 -3.1862 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_2'>
-        <pose>19.1842 -19.6842 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_0'>
+        <pose>25.0254 -3.29203 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>19.1842 -19.6842 0 0 -0 0</pose>
+          <pose>25.0254 -3.29203 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_3'>
-        <pose>18.6991 -4.2162 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_1'>
+        <pose>9.93751 28.5985 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>18.6991 -4.2162 0 0 -0 0</pose>
+          <pose>9.93751 28.5985 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_4'>
-        <pose>18.546 14.3128 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_10'>
+        <pose>43.8523 -4.36921 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>18.546 14.3128 0 0 -0 0</pose>
+          <pose>43.8523 -4.36921 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_5'>
-        <pose>19.2157 34.127 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_11'>
+        <pose>44.5566 27.6277 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>19.2157 34.127 0 0 -0 0</pose>
+          <pose>44.5566 27.6277 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_6'>
-        <pose>-19.5565 33.5556 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_12'>
+        <pose>57.1086 25.2923 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-19.5565 33.5556 0 0 -0 0</pose>
+          <pose>57.1086 25.2923 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_7'>
-        <pose>-11.9521 19.403 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_13'>
+        <pose>59.9102 11.6877 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-11.9521 19.403 0 0 -0 0</pose>
+          <pose>59.9102 11.6877 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_8'>
-        <pose>-18.9462 46.4837 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_14'>
+        <pose>61.7213 -1.04078 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-18.9462 46.4837 0 0 -0 0</pose>
+          <pose>61.7213 -1.04078 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='asphalt_plane_clone_clone_0_clone_9'>
-        <pose>-1.02032 49.9363 0 0 -0 0</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_2'>
+        <pose>27.3435 28.4654 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.02032 49.9363 0 0 -0 0</pose>
+          <pose>27.3435 28.4654 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='box_target_green'>
-        <pose>0.300188 9.2537 -0.710103 0 0 -1.58326</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_3'>
+        <pose>-6.05119 28.7094 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.300188 9.2537 -0.710103 0 0 -1.58326</pose>
+          <pose>-6.05119 28.7094 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='box_target_green_clone'>
-        <pose>0.534297 29.8626 -0.710103 0 0 -1.58326</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_4'>
+        <pose>-6.18027 10.0246 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.534297 29.8626 -0.710103 0 0 -1.58326</pose>
+          <pose>-6.18027 10.0246 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='box_target_green_clone_clone'>
-        <pose>8.77965 48.7055 -0.710103 0 0 -1.58326</pose>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_5'>
+        <pose>-6.36926 -6.88231 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>8.77965 48.7055 -0.710103 0 0 -1.58326</pose>
+          <pose>-6.36926 -6.88231 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_6'>
+        <pose>-6.08705 47.0345 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-6.08705 47.0345 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_7'>
+        <pose>10.0798 46.1623 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10.0798 46.1623 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_8'>
+        <pose>26.8137 46.4517 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>26.8137 46.4517 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_9'>
+        <pose>43.0995 11.4746 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>43.0995 11.4746 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -488,114 +294,144 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='hatchback'>
-        <pose>6.29129 19.4716 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>6.29129 19.4716 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='hatchback_blue'>
-        <pose>-6.87438 40.7982 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-6.87438 40.7982 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='hatchback_red'>
-        <pose>-0.249345 -3.56712 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.249345 -3.56712 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='marker_bottom_left'>
-        <pose>-9.26194 9.27499 0.549996 9e-06 -0 2.2e-05</pose>
+        <pose>0 20 0.549996 1e-05 -0 2.2e-05</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-9.26194 9.27499 0.549996 9e-06 -0 2.2e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='marker_bottom_left_clone'>
-        <pose>-9.18735 29.3993 0.549996 9e-06 -0 2.2e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-9.18735 29.3993 0.549996 9e-06 -0 2.2e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='marker_bottom_left_clone_clone'>
-        <pose>-9.21826 49.1451 0.549996 9e-06 -0 2.2e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-9.21826 49.1451 0.549996 9e-06 -0 2.2e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='marker_bottom_left_clone_clone_clone'>
-        <pose>9.75983 49.3095 0.549996 9e-06 -0 2.2e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>9.75983 49.3095 0.549996 9e-06 -0 2.2e-05</pose>
+          <pose>0 20 0.549996 1e-05 -0 2.2e-05</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='marker_bottom_right'>
-        <pose>-9.23389 -9.39313 0.549997 0 -6e-06 0.065953</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-9.23389 -9.39313 0.549997 0 -6e-06 0.065953</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='marker_top_left'>
-        <pose>9.44701 9.02988 0.549998 -1e-06 4e-06 -0.02786</pose>
+        <pose>19.6961 19.6629 0.549993 -6e-06 -0 -0.024567</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>9.44701 9.02988 0.549998 -1e-06 4e-06 -0.02786</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>1.94553 -2.05708 -6.4631 0.972769 -0.749739 -3.14154</acceleration>
-          <wrench>1.94553 -2.05708 -6.4631 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='marker_top_left_clone'>
-        <pose>9.49316 29.5533 0.549994 6e-06 -3e-06 0.001019</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>9.49316 29.5533 0.549994 6e-06 -3e-06 0.001019</pose>
+          <pose>19.6961 19.6629 0.549993 -6e-06 -0 -0.024567</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
-      <model name='marker_top_right'>
-        <pose>9.40694 -9.40046 0.549995 -1e-05 -0 6e-06</pose>
+      <model name='marker_top_left_clone'>
+        <pose>40.0001 20.0001 0.549998 -1e-06 4e-06 -0.024183</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>9.40694 -9.40046 0.549995 -1e-05 -0 6e-06</pose>
+          <pose>40.0001 20.0001 0.549998 -1e-06 4e-06 -0.024183</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.005795 0.016531 -9.77244 -0.033072 0.011579 -9e-06</acceleration>
-          <wrench>0.005795 0.016531 -9.77244 0 -0 0</wrench>
+          <acceleration>1.95315 -2.04998 -6.463 0.958548 -0.764954 -3.14154</acceleration>
+          <wrench>1.95315 -2.04998 -6.463 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='marker_top_left_clone_clone'>
+        <pose>60.1835 20.1969 0.549998 -1e-06 4e-06 -0.024452</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>60.1835 20.1969 0.549998 -1e-06 4e-06 -0.024452</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.95259 -2.0505 -6.463 0.95959 -0.763843 -3.14154</acceleration>
+          <wrench>1.95259 -2.0505 -6.463 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='marker_top_left_clone_clone_0'>
+        <pose>60.4638 0.082892 0.549999 0 -2e-06 -0.024422</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>60.4638 0.082892 0.549999 0 -2e-06 -0.024422</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-10.9635 0.273528 8.47832 2.59629 -0.064478 3.14048</acceleration>
+          <wrench>-10.9635 0.273528 8.47832 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='marker_top_right'>
+        <pose>20.095 -0.660312 0.549995 -1e-05 0 0.021674</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>20.095 -0.660312 0.549995 -1e-05 0 0.021674</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.004786 0.011002 -9.78184 -0.022001 0.009562 -3e-06</acceleration>
+          <wrench>0.004786 0.011002 -9.78184 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='marker_top_right_clone'>
+        <pose>39.9999 2.8e-05 0.55 0 -0 9.5e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>39.9999 2.8e-05 0.55 0 -0 9.5e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_box'>
+        <pose>9.99999 10.0139 0.55 0 -0 1.7e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.99999 10.0139 0.55 0 -0 1.7e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-4.03273 0.968651 5.01025 1.20435 -1.35802 -3.14084</acceleration>
+          <wrench>-4.03273 0.968651 5.01025 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_box_0'>
+        <pose>24.9265 15.591 0.55 -0 -0 -0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>24.9265 15.591 0.55 -0 -0 -0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_box_1'>
+        <pose>50 10 0.55 0 -0 2e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>50 10 0.55 0 -0 2e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.042132 -9.81308 9.79907 0.776451 0.084295 -9e-06</acceleration>
+          <wrench>0.042132 -9.81308 9.79907 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_cylinder'>
+        <pose>20 10 0.549998 1e-06 -4e-06 -6.7e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>20 10 0.549998 1e-06 -4e-06 -6.7e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_cylinder_0'>
+        <pose>40 5 0.549994 -0 -2e-06 8e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>40 5 0.549994 -0 -2e-06 8e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_cylinder_1'>
+        <pose>60.1496 19.1108 0.549999 -1e-06 -4e-06 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>60.1496 19.1108 0.549999 -1e-06 -4e-06 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -604,7 +440,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-0.170627 -15.5172 24.6108 0 1.2418 1.48865</pose>
+        <pose>29.8663 -12.463 181.494 0 1.5698 3e-06</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1254,43 +1090,7 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>9.42472 9.27475 0.55 0 -0 4e-05</pose>
     </model>
-    <model name='box_target_green'>
-      <pose>-0.112465 9.2537 1 0 -0 0</pose>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>6 6 2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://box_target_green/meshes/mesh.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='asphalt_plane_clone'>
+    <model name='asphalt_plane_clone_clone_0_clone_0'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
@@ -1332,9 +1132,9 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.145456 16.5583 0 0 -0 0</pose>
+      <pose>0.344937 -19.9121 0 0 -0 0</pose>
     </model>
-    <model name='asphalt_plane_clone_clone'>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
@@ -1376,16 +1176,15 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.155097 39.7404 0 0 -0 0</pose>
+      <pose>26.3419 10.2534 0 0 -0 0</pose>
     </model>
-    <model name='box_target_green_clone'>
-      <pose>0.534297 29.8626 -0.710103 0 0 -1.58326</pose>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>6 6 2</size>
+              <size>20 20 0.1</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -1403,25 +1202,33 @@
           </surface>
         </collision>
         <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
           <geometry>
-            <mesh>
-              <uri>model://box_target_green/meshes/mesh.dae</uri>
-            </mesh>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
           </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <pose>10.0086 -3.1862 0 0 -0 0</pose>
     </model>
-    <model name='box_target_green_clone_clone'>
-      <pose>8.77965 48.7055 -0.710103 0 0 -1.58326</pose>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_0'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>6 6 2</size>
+              <size>20 20 0.1</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -1439,16 +1246,377 @@
           </surface>
         </collision>
         <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
           <geometry>
-            <mesh>
-              <uri>model://box_target_green/meshes/mesh.dae</uri>
-            </mesh>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
           </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <pose>25.0254 -3.29203 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>9.93751 28.5985 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>27.3435 28.4654 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_3'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-6.05119 28.7094 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-6.18027 10.0246 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_5'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-6.36926 -6.88231 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_6'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-6.08705 47.0345 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_7'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>10.0798 46.1623 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_8'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>26.8137 46.4517 0 0 -0 0</pose>
     </model>
     <model name='marker_top_left_clone'>
       <link name='link'>
@@ -1543,9 +1711,9 @@
       </link>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>9.49279 29.551 0.55 0 -0 4.8e-05</pose>
+      <pose>35.9354 19.2826 0.549995 -1e-06 1e-05 -0.024456</pose>
     </model>
-    <model name='marker_bottom_left_clone'>
+    <model name='marker_top_right_clone'>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -1636,11 +1804,275 @@
           </surface>
         </collision>
       </link>
-      <static>1</static>
+      <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-9.18735 29.3993 0.549996 9e-06 -0 2.2e-05</pose>
+      <pose>33.8916 -0.452806 0.549995 -1e-05 -0 0.021682</pose>
     </model>
-    <model name='marker_bottom_left_clone_clone'>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_9'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>43.5064 10.2863 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_10'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>43.8523 -4.36921 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_11'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>44.5566 27.6277 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_12'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>57.1086 25.2923 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_13'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>59.9102 11.6877 0 0 -0 0</pose>
+    </model>
+    <model name='asphalt_plane_clone_clone_0_clone_0_clone_clone_14'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>61.7213 -1.04078 0 0 -0 0</pose>
+    </model>
+    <model name='marker_top_left_clone_clone'>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -1731,11 +2163,11 @@
           </surface>
         </collision>
       </link>
-      <static>1</static>
+      <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-9.21826 49.1451 0.549996 9e-06 -0 2.2e-05</pose>
+      <pose>56.1835 20.1969 0.55 -0 -0 -0.024457</pose>
     </model>
-    <model name='marker_bottom_left_clone_clone_clone'>
+    <model name='marker_top_left_clone_clone_0'>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -1826,139 +2258,31 @@
           </surface>
         </collision>
       </link>
-      <static>1</static>
+      <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>9.75983 49.3095 0.549996 9e-06 -0 2.2e-05</pose>
+      <pose>56.4638 0.08292 0.55 -0 -0 -0.024457</pose>
     </model>
-    <model name='hatchback_red'>
-      <static>1</static>
+    <model name='unit_cylinder'>
+      <pose>19.9421 9.24931 0.5 0 -0 0</pose>
       <link name='link'>
-        <collision name='collision'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback_red/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback_red/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-0.249345 -0.335483 0 0 -0 0</pose>
-    </model>
-    <model name='hatchback'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>6.29129 19.4716 0 0 -0 0</pose>
-    </model>
-    <model name='hatchback_blue'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback_blue/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 0 0 -0 1.5708</pose>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://hatchback_blue/meshes/hatchback.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-6.87438 40.7982 0 0 -0 0</pose>
-    </model>
-    <model name='House 1'>
-      <static>1</static>
-      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -1976,328 +2300,42 @@
         </collision>
         <visual name='visual'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <material>
             <script>
-              <uri>model://house_1/materials/scripts</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_1/Diffuse</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>House_1_Normal.png</normal_map>
-            </shader>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.604761 -16.7584 0 0 -0 0</pose>
     </model>
-    <model name='House 1_clone'>
-      <static>1</static>
+    <model name='unit_box'>
+      <pose>10.9207 9.5271 0.5 0 -0 0</pose>
       <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_1/materials/scripts</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_1/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>24.9463 -6.5791 0 0 -0 0</pose>
-    </model>
-    <model name='House 3'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-15.1306 -6.86962 0 0 -0 0</pose>
-    </model>
-    <model name='House 3_clone'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-12.4611 9.8236 0 0 0 -1.54748</pose>
-    </model>
-    <model name='House 2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_2/meshes/house_2.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_2/meshes/house_2.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_2/materials/scripts</uri>
-              <uri>model://house_2/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_2/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-17.7953 22.8721 0 0 -0 0</pose>
-    </model>
-    <model name='House 2_clone'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_2/meshes/house_2.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_2/meshes/house_2.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_2/materials/scripts</uri>
-              <uri>model://house_2/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_2/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>14.9829 3.18615 0 0 0 -1.58354</pose>
-    </model>
-    <model name='House 3_clone_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>17.5619 -13.1629 0 0 0 -1.54748</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0'>
-      <static>1</static>
-      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 20 0.1</size>
+              <size>1 1 1</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -2315,17 +2353,15 @@
           </surface>
         </collision>
         <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>20 20 0.1</size>
+              <size>1 1 1</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
           </material>
         </visual>
@@ -2333,545 +2369,28 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-20.2687 18.7019 0 0 -0 0</pose>
     </model>
-    <model name='asphalt_plane_clone_clone_0_clone'>
-      <static>1</static>
+    <model name='unit_cylinder_0'>
+      <pose>39.9463 10.3469 0.5 0 -0 0</pose>
       <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-19.7029 0.150026 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>0.344937 -19.9121 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-19.2904 -19.5361 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>19.1842 -19.6842 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_3'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>18.6991 -4.2162 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_4'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>18.546 14.3128 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_5'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>19.2157 34.127 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_6'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-19.5565 33.5556 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_7'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-11.9521 19.403 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_8'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-18.9462 46.4837 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_9'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-1.02032 49.9363 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane_clone_clone_0_clone_10'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>13.6089 50.2386 0 0 -0 0</pose>
-    </model>
-    <model name='House 3_clone_clone'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -2889,38 +2408,43 @@
         </collision>
         <visual name='visual'>
           <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <material>
             <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-13.4511 35.5433 0 0 0 -1.54748</pose>
     </model>
-    <model name='House 1_clone_0'>
-      <static>1</static>
+    <model name='unit_box_0'>
+      <pose>24.9265 15.591 0.5 0 -0 0</pose>
       <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <box>
+              <size>1 1 1</size>
+            </box>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -2938,37 +2462,43 @@
         </collision>
         <visual name='visual'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <box>
+              <size>1 1 1</size>
+            </box>
           </geometry>
           <material>
             <script>
-              <uri>model://house_1/materials/scripts</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_1/Diffuse</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>House_1_Normal.png</normal_map>
-            </shader>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>18.85 32.3358 0 0 -0 0</pose>
     </model>
-    <model name='House 1_clone_1'>
-      <static>1</static>
+    <model name='unit_cylinder_1'>
+      <pose>60.1496 19.1108 0.5 0 -0 0</pose>
       <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -2986,37 +2516,43 @@
         </collision>
         <visual name='visual'>
           <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1</length>
+            </cylinder>
           </geometry>
           <material>
             <script>
-              <uri>model://house_1/materials/scripts</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_1/Diffuse</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>House_1_Normal.png</normal_map>
-            </shader>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-18.8322 52.5712 0 0 -0 0</pose>
     </model>
-    <model name='House 3_0'>
-      <static>1</static>
+    <model name='unit_box_1'>
+      <pose>50.8015 10.2939 0.5 0 -0 0</pose>
       <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <collision name='collision'>
           <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <box>
+              <size>1 1 1</size>
+            </box>
           </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -3034,174 +2570,21 @@
         </collision>
         <visual name='visual'>
           <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
+            <box>
+              <size>1 1 1</size>
+            </box>
           </geometry>
           <material>
             <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-1.05108 55.9287 0 0 -0 0</pose>
-    </model>
-    <model name='House 1_clone_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_1/meshes/house_1.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_1/materials/scripts</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_1/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>13.2361 58.214 0 0 -0 0</pose>
-    </model>
-    <model name='House 3_0_clone'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>19.2952 41.5046 0 0 -0 0</pose>
-    </model>
-    <model name='House 3_0_clone_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>1.5 1.5 1.5</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://house_3/materials/scripts</uri>
-              <uri>model://house_3/materials/textures</uri>
-              <uri>model://house_1/materials/textures</uri>
-              <name>House_3/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>21.8374 47.5252 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

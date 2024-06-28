@@ -64,8 +64,8 @@ class APFConrolNode(Node):
         # calculate field positioning
         fx, fy = gazebo_to_python(y, x)
 
-        print(f"fx: {fx}")
-        print(f"fy: {fy}")
+        print(f"fx: {y} -> {fx}")
+        print(f"fy: {x} -> {fy}")
 
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy, scale_x=1, scale_y=1)
@@ -110,7 +110,7 @@ class APFConrolNode(Node):
 
             if(x > bound_min_y and x < bound_max_y):
                 print(f"Waypoint: {number}")
-                if(number != self.calculate_waypoint):
+                if(number != self.current_waypoint):
                     self.current_waypoint = number
                     # now we change objective !
                     newBoundaries(bound_max_x, bound_min_x, bound_max_y, bound_min_y)

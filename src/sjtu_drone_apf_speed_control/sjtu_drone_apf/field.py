@@ -30,7 +30,7 @@ r = 2
 epsilon = 1
 
 # gridSize
-gridSize = 50
+gridSize = 100
 
 # field
 x = np.arange(-0,gridSize,1)
@@ -131,9 +131,9 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
   maxForseY = dely.max() / 2
 
   if(x < 0): x = 0
-  if(x > 49): x = 49 
+  if(x > (gridSize-1)): x = (gridSize-1)
   if(y < 0): y = 0
-  if(y > 49): y = 49 
+  if(y > (gridSize-1)): y = (gridSize-1)
 
   # positioning
   forceOnDrone = np.array([

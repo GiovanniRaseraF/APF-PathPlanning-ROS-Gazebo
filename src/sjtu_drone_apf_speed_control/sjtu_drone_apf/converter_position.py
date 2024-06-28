@@ -9,8 +9,8 @@ gminx = 20
 gminy = 0
 
 #python world
-pmaxx = 50
-pmaxy = 50
+pmaxx = 100
+pmaxy = 100
 pminx = 0
 pminy = 0
 

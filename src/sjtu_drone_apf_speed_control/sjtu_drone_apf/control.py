@@ -57,14 +57,12 @@ class APFConrolNode(Node):
         pos = p.position
         x = pos.x
         y = pos.y
-        scale_x =  -1 if x < 0 else 1
-        scale_y =  -1 if y < 0 else 1
 
         # waypointing system
         self.calculate_waypoint(x, y)
 
         # calculate field positioning
-        fx, fy = gazebo_to_python(x, y)
+        fx, fy = gazebo_to_python(y, x)
 
         print(f"fx: {fx}")
         print(f"fy: {fy}")
@@ -72,13 +70,13 @@ class APFConrolNode(Node):
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy, scale_x=1, scale_y=1)
 
-        print(f"x_speed: {y_speed}")
-        print(f"y_speed: {x_speed}")
+        print(f"x_speed: {x_speed}")
+        print(f"y_speed: {-y_speed}")
 
         linear_vec = Vector3()
-        linear_vec.x = y_speed
-        linear_vec.y = x_speed
 
+        linear_vec.x = x_speed 
+        linear_vec.y = -y_speed
 
         # Actuate
         self.publish_cmd_vel(linear_vec=linear_vec)
@@ -110,7 +108,7 @@ class APFConrolNode(Node):
             bound_min_y = w["bound_min_y"]
             bound_max_y = w["bound_max_y"]
 
-            if(y > bound_min_y and y < bound_max_y):
+            if(x > bound_min_y and x < bound_max_y):
                 print(f"Waypoint: {number}")
                 if(number != self.calculate_waypoint):
                     self.current_waypoint = number

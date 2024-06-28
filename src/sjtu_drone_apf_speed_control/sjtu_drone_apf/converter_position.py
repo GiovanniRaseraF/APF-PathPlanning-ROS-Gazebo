@@ -3,10 +3,10 @@ import math as Math
 # Author: Diletta Giabardo
 
 #gazebo world
-gmaxx = 9.42472
-gmaxy = 9.27499
-gminx = -9.26194
-gminy = -9.39923
+gmaxx = 0
+gmaxy = 20
+gminx = 20
+gminy = 0
 
 #python world
 pmaxx = 50

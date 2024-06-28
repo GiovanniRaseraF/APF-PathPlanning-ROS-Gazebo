@@ -127,17 +127,13 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
   global dely
 
   # scaling
-  maxForseX = delx.max()
-  maxForseY = dely.max()
+  maxForseX = delx.max() / 2
+  maxForseY = dely.max() / 2
 
   if(x < 0): x = 0
   if(x > 49): x = 49 
   if(y < 0): y = 0
   if(y > 49): y = 49 
-
-  # debug
-  print(x)
-  print(y)
 
   # positioning
   forceOnDrone = np.array([

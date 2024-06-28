@@ -3,35 +3,35 @@
         {
             "number": 1,
             "goal_x": 50,
-            "goal_y": 25,
-            "obstacle_x": 25,
-            "obstacle_y": 25,
-            "bound_min_x" : -9.26194,
-            "bound_max_x" : 9.42472,
-            "bound_min_y" : -9.39923,
-            "bound_max_y" : 9.27499
+            "goal_y": 40,
+            "obstacle_x": 0,
+            "obstacle_y": 0,
+            "bound_min_x" : 20,
+            "bound_max_x" : 0,
+            "bound_min_y" : 0,
+            "bound_max_y" : 20
         },
         {
             "number": 2,
             "goal_x": 50,
-            "goal_y": 25,
-            "obstacle_x": 10,
-            "obstacle_y": 40,
-            "bound_min_x" : -9.26194,
-            "bound_max_x" : 9.42472,
-            "bound_min_y" : 9.27499,
-            "bound_max_y" : 29.399300
+            "goal_y": 0,
+            "obstacle_x": 50,
+            "obstacle_y": 0,
+            "bound_min_x" : 20,
+            "bound_max_x" : 0,
+            "bound_min_y" : 20,
+            "bound_max_y" : 40 
         },
         {
             "number": 3,
             "goal_x": 50,
             "goal_y": 50,
-            "obstacle_x": 10,
+            "obstacle_x": 25,
             "obstacle_y": 25,
-            "bound_min_x" : -9.26194,
-            "bound_max_x" : 9.42472,
-            "bound_min_y" : 29.399300,
-            "bound_max_y" : 49.145100
+            "bound_min_x" : 20,
+            "bound_max_x" : 0,
+            "bound_min_y" : 40,
+            "bound_max_y" : 60
         }
     ]
 }

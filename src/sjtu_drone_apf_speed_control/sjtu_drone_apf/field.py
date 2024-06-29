@@ -127,8 +127,15 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
   global dely
 
   # scaling
-  maxForseX = delx.max() / 2
-  maxForseY = dely.max() / 2
+  minForseX = delx.min()
+  maxForseX = delx.max()
+  minForseY = dely.min()
+  maxForseY = dely.max()
+
+  dstX = abs(maxForseX) + abs(minForseX)
+  dstY = abs(maxForseY) + abs(minForseY)
+
+  print(f"maxforceX {maxForseX}")
 
   if(x < 0): x = 0
   if(x > (gridSize-1)): x = (gridSize-1)
@@ -143,8 +150,8 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
 
   # calculate force to apply
   realForceOnDrone = (np.array([
-    forceOnDrone[0] / maxForseX,
-    forceOnDrone[1] / maxForseY,
+    (forceOnDrone[0] / dstX) * 2,
+    (forceOnDrone[1] / dstY) * 2,
   ]))
 
   # actual speed

@@ -13,8 +13,6 @@ from sensor_msgs.msg import Range, Image, Imu
 
 import json
 
-
-
 # positioning
 from converter_position import *
 from field import *
@@ -25,6 +23,8 @@ prefix = "/simple_drone/"
 class APFConrolNode(Node):
     def __init__(self) -> None:
         self.pose = None
+        self.autonomy = False
+
         super().__init__('apf_control')
 
         # Control speed
@@ -33,27 +33,26 @@ class APFConrolNode(Node):
         # Drone positioning
         self.sub_gt_pose = self.create_subscription(Pose, f"{prefix}gt_pose", self.cb_gt_pose, 10)
 
+        # Autonomy Toggler
+        self.sub_toggle_autonomy = self.create_subscription(Empty, f"{prefix}toggle_autonomy", self.cb_t_a, 10)
+
         # Waypoint 
         self.current_waypoint = 0
 
+    # toggle autonomy
+    def cb_t_a(self, e):
+        self.autonomy = not self.autonomy 
+
+        if(not self.autonomy):
+            print("Stop Drone !")
+            self.publish_cmd_vel(linear_vec=Vector3())
+
+        print(f"Autonomy: {self.autonomy}")
     
     def cb_gt_pose(self, p):
         self.pose = p
+
         # Message Structure
-        """geometry_msgs.msg.Pose(
-                position=geometry_msgs.msg.Point(
-                    x=-9.277429850948648, 
-                    y=-0.00543712248685583, 
-                    z=0.05000287573880944
-                ), 
-                orientation=geometry_msgs.msg.Quaternion(
-                    x=1.24447577829819e-05, 
-                    y=-4.13604384898043e-06, 
-                    z=0.00662843250080105, 
-                    w=0.9999780316139969
-                )
-            )
-        """
         pos = p.position
         x = pos.x
         y = pos.y
@@ -68,7 +67,7 @@ class APFConrolNode(Node):
         print(f"fy: {x} -> {fy}")
 
         # read speed from field
-        x_speed, y_speed = get_field_power(fx, fy, scale_x=1, scale_y=1)
+        x_speed, y_speed = get_field_power(fx, fy, scale_x = 1, scale_y = 1)
 
         print(f"x_speed: {x_speed}")
         print(f"y_speed: {-y_speed}")
@@ -79,7 +78,8 @@ class APFConrolNode(Node):
         linear_vec.y = -y_speed
 
         # Actuate
-        self.publish_cmd_vel(linear_vec=linear_vec)
+        if(self.autonomy):
+            self.publish_cmd_vel(linear_vec=linear_vec)
 
     # Speed write
     def publish_cmd_vel(self, linear_vec: Vector3 = Vector3(), angular_vec: Vector3 = Vector3()) -> None:
@@ -134,7 +134,6 @@ def main(args=None):
 
     apf_control_node.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

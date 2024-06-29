@@ -59,7 +59,9 @@ class TeleopNode(Node):
         self.takeoff_publisher = self.create_publisher(Empty, 'takeoff', 10)
         self.land_publisher = self.create_publisher(Empty, 'land', 10)
 
+        # Autonomy and Waypoint system
         self.toggle_autonomy_publisher = self.create_publisher(Empty, 'toggle_autonomy', 10)
+        self.waypoint_system_publisher = self.create_publisher(String, 'waypoint_system', 10)
         
         # Velocity parameters
         self.linear_velocity = 0.0
@@ -151,6 +153,13 @@ class TeleopNode(Node):
             elif key.lower() == 'h':
                 # Say Ciao sono Giovanni
                 print("Ciao sono Giovanni")
+            
+            elif key.lower() in ['1', '2', '3']:
+                print(f"Interest in Waypoint: {key.lower()}")
+                w = key.lower()
+                mess = String()
+                mess.data = w
+                self.waypoint_system_publisher.publish(mess)
             
             # start autonomy
             elif key.lower() == "g":

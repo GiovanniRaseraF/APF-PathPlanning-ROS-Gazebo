@@ -35,9 +35,13 @@ class APFConrolNode(Node):
 
         # Autonomy Toggler
         self.sub_toggle_autonomy = self.create_subscription(Empty, f"{prefix}toggle_autonomy", self.cb_t_a, 10)
+        self.sub_waypoint_system = self.create_subscription(String, f"{prefix}waypoint_system", self.cb_w_s, 10)
 
         # Waypoint 
         self.current_waypoint = 0
+
+    def cb_w_s(self, p):
+        self.calculate_waypoint(int(p.data))
 
     # toggle autonomy
     def cb_t_a(self, e):
@@ -56,9 +60,6 @@ class APFConrolNode(Node):
         pos = p.position
         x = pos.x
         y = pos.y
-
-        # waypointing system
-        self.calculate_waypoint(x, y)
 
         # calculate field positioning
         fx, fy = gazebo_to_python(y, x)
@@ -90,14 +91,17 @@ class APFConrolNode(Node):
         self.cmd_vel_publisher.publish(twist)
     
     # calculate wich waypoint to activate
-    def calculate_waypoint(self, x : float, y : float):
+    def calculate_waypoint(self, interest):
         # read way points
         waypoints_file = open('waypoints.json')
         waypoints = json.load(waypoints_file)["waypoints"]
+
          
         # change interest on waypoint change
         # the calculation in this case is simple
         for w in waypoints:
+            print(w)
+            input()
             number = w["number"]
             goal_x = w["goal_x"]
             goal_y = w["goal_y"]
@@ -108,18 +112,15 @@ class APFConrolNode(Node):
             bound_min_y = w["bound_min_y"]
             bound_max_y = w["bound_max_y"]
 
-            if(x > bound_min_y and x < bound_max_y):
-                print(f"Waypoint: {number}")
-                if(number != self.current_waypoint):
-                    self.current_waypoint = number
-                    # now we change objective !
-                    newBoundaries(bound_max_x, bound_min_x, bound_max_y, bound_min_y)
+            if(number == interest):
+                print("New Waypoint: {interest}" )
+                # now we change objective !
+                newBoundaries(bound_max_x, bound_min_x, bound_max_y, bound_min_y)
 
-                    # recalculate the field based on new positioning
-                    setNewPositioning(newgoal=np.array([goal_x, goal_y]), newobstacle=np.array([obstacle_x, obstacle_y]))
+                # recalculate the field based on new positioning
+                setNewPositioning(newgoal=np.array([goal_x, goal_y]), newobstacle=np.array([obstacle_x, obstacle_y]))
                     
-                    calcForceField()
-
+                calcForceField()
 
 # run loop
 def main(args=None):

@@ -25,7 +25,7 @@
         {
             "number": 3,
             "goal_x": 100,
-            "goal_y": 0,
+            "goal_y": 100,
             "obstacle_x": 50,
             "obstacle_y": 50,
             "bound_min_x" : 20,

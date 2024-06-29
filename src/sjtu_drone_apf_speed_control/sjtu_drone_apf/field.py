@@ -61,7 +61,7 @@ def setNewPositioning(newgoal : np.array, newobstacle : np.array):
   goal = newgoal
   obstacle = newobstacle
 
-  calcForceField()
+  #calcForceField()
 
 def calcForceField():
   global drone
@@ -150,8 +150,8 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
 
   # calculate force to apply
   realForceOnDrone = (np.array([
-    (forceOnDrone[0] / dstX) * 2,
-    (forceOnDrone[1] / dstY) * 2,
+    (forceOnDrone[0] / dstX) * 4,
+    (forceOnDrone[1] / dstY) * 4,
   ]))
 
   # actual speed

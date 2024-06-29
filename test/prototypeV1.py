@@ -165,7 +165,7 @@ while distance(drone, goal) > epsilon:
   drone = drone + realForceOnDrone
 
   # when to end
-  if(drone[0]>= 50 or drone[1] >= 50):
+  if(drone[0]>= gridSize or drone[1] >= gridSize):
     break
 
   if(counter % 60 == 0):

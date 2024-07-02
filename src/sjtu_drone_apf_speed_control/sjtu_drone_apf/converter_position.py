@@ -24,7 +24,8 @@ def newBoundaries(newgmaxx, newgminx, newgmaxy, newgminy):
     gminx = newgminx
     gmaxy = newgmaxy
     gminy = newgminy
-    print("NewValues: maxx: {gmaxx}, minx: {gminx}, maxx: {gmaxy}, miny: {gminy}")
+
+    print(f"NewValues: maxx: {gmaxx}, minx: {gminx}, maxx: {gmaxy}, miny: {gminy}")
 
 # convert from gazebo coordinates to matrix
 def gazebo_to_python(gx, gy): 

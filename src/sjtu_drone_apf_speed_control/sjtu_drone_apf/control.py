@@ -40,6 +40,7 @@ class APFConrolNode(Node):
         # Waypoint 
         self.current_waypoint = 0
 
+    # Change interest using waypoint
     def cb_w_s(self, p):
         self.calculate_waypoint(int(p.data))
 
@@ -64,7 +65,6 @@ class APFConrolNode(Node):
         # calculate field positioning
         fx, fy = gazebo_to_python(y, x)
 
-        
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy, scale_x = 1, scale_y = 1)
         
@@ -108,7 +108,7 @@ class APFConrolNode(Node):
             bound_max_y = w["bound_max_y"]
 
             if(number == interest):
-                print("New Waypoint: {interest}" )
+                print(f"New Waypoint: {interest}" )
                 # now we change objective !
                 newBoundaries(bound_max_x, bound_min_x, bound_max_y, bound_min_y)
 

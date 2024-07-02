@@ -63,7 +63,8 @@ def generate_launch_description():
         # "worlds", "p5.world"
         #"worlds", "p6.world"
         #"worlds", "good.world"
-        "worlds", "s10.world"
+        #"worlds", "s10.world"
+        "worlds", "finale.world"
     )
 
     def launch_gzclient(context, *args, **kwargs):

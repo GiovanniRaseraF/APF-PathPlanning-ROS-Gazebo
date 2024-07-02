@@ -1,8 +1,8 @@
 # Come utilizzare
 ## Prerequisiti
 - Ubuntu 22.04 LTS - Va bene anche virtualizzato
-- Docker
-- Non Serve installare ROS direttamente, viene fatto tutto dallo script di configurazione dell'ambiente di sviluppo !!!!
+- Docker 
+- ! Non Serve installare ROS direttamente, viene fatto tutto dallo script di configurazione dell'ambiente di sviluppo !
 
 ## Come Installare docker per Ubuntu 22.04
 1.  ```bash
@@ -33,11 +33,45 @@
     ./cache.sh
     ```
 2.  ```bash
-    
+    # build del container
+    sudo ./local_build.sh
+    ```
+3.  ```bash
+    sudo ./local_run.sh
     ```
 
-# sjtu_drone
+## Connessione al container per e avviamento del nodo di controllo
+1.  ```bash
+    sudo ./run_remote.sh
+    ```
 
+2.  ```bash
+    cd /home/{USER}/sjtu_drone_control
+    ```
+
+3.  ```bash
+    ./run.sh
+    ```
+
+## Speigazione delle finestre avviate
+1. Mondo Gazebo
+2. RViz
+3. Telecomando Remoto
+4. APF - Controllo autonomo
+
+## Selezionare il waypoint
+- Premere 1 o 2 o 3
+
+## Avviare l'autonomia del drone
+- Premere g
+
+#
+# 
+# 
+# 
+# 
+# 
+# sjtu_drone
 [![Iron](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NovoG93/589e4b4dc8d92861e4b92defff6d56c0/raw/_iron_build.json)](https://github.com/NovoG93/sjtu_drone/actions/workflows/CI_CD.yml) [![Humble](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NovoG93/589e4b4dc8d92861e4b92defff6d56c0/raw/_humble_build.json)](https://github.com/NovoG93/sjtu_drone/actions/workflows/CI_CD.yml) [![Rolling](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NovoG93/589e4b4dc8d92861e4b92defff6d56c0/raw/_rolling_build.json)](https://github.com/NovoG93/sjtu_drone/actions/workflows/CI_CD.yml)
 
 sjtu_drone is a quadrotor simulation program forked from [tum_simulator](http://wiki.ros.org/tum_simulator), developed using ROS + Gazebo.

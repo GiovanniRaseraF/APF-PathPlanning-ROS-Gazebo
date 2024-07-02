@@ -64,14 +64,12 @@ class APFConrolNode(Node):
         # calculate field positioning
         fx, fy = gazebo_to_python(y, x)
 
-        print(f"fx: {y} -> {fx}")
-        print(f"fy: {x} -> {fy}")
-
+        
         # read speed from field
         x_speed, y_speed = get_field_power(fx, fy, scale_x = 1, scale_y = 1)
-
-        print(f"x_speed: {x_speed}")
-        print(f"y_speed: {-y_speed}")
+        
+        #print(f"fx: {y} -> {fx} -> s: {x_speed}")
+        #print(f"fy: {x} -> {fy} -> s: {-y_speed}")
 
         linear_vec = Vector3()
 
@@ -96,12 +94,9 @@ class APFConrolNode(Node):
         waypoints_file = open('waypoints.json')
         waypoints = json.load(waypoints_file)["waypoints"]
 
-         
         # change interest on waypoint change
         # the calculation in this case is simple
         for w in waypoints:
-            print(w)
-            input()
             number = w["number"]
             goal_x = w["goal_x"]
             goal_y = w["goal_y"]

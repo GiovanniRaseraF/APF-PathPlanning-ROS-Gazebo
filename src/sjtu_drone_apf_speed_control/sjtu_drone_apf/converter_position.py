@@ -24,6 +24,7 @@ def newBoundaries(newgmaxx, newgminx, newgmaxy, newgminy):
     gminx = newgminx
     gmaxy = newgmaxy
     gminy = newgminy
+    print("NewValues: maxx: {gmaxx}, minx: {gminx}, maxx: {gmaxy}, miny: {gminy}")
 
 # convert from gazebo coordinates to matrix
 def gazebo_to_python(gx, gy): 
@@ -33,21 +34,11 @@ def gazebo_to_python(gx, gy):
     div_len_x = abs_distance_x / pmaxx
     px = Math.floor(abs_distance_drone_x / div_len_x)
 
-    print(f"abs_distance_x:{abs_distance_x}")
-    print(f"abs_distance_drone_x:{abs_distance_drone_x}")
-    print(f"div_len_x:{div_len_x}")
-    print(f"px:{px}")
-
     # y
     abs_distance_y = abs(gmaxy - gminy)
     abs_distance_drone_y = abs_distance_y - abs(gmaxy - gy)
     div_len_y = abs_distance_y / pmaxy
     py = Math.floor(abs_distance_drone_y / div_len_y) 
-
-    print(f"abs_distance_y:{abs_distance_y}")
-    print(f"abs_distance_drone_y:{abs_distance_drone_y}")
-    print(f"div_len_y:{div_len_y}")
-    print(f"px:{py}")
 
     return px, py
 

@@ -61,7 +61,9 @@ def setNewPositioning(newgoal : np.array, newobstacle : np.array):
   goal = newgoal
   obstacle = newobstacle
 
-  #calcForceField()
+  print(f"New Pos: obstacle: {obstacle} | goal {goal}")
+
+  calcForceField()
 
 def calcForceField():
   global drone
@@ -134,8 +136,6 @@ def get_field_power(x: int, y: int, scale_x: float, scale_y: float):
 
   dstX = abs(maxForseX) + abs(minForseX)
   dstY = abs(maxForseY) + abs(minForseY)
-
-  print(f"maxforceX {maxForseX}")
 
   if(x < 0): x = 0
   if(x > (gridSize-1)): x = (gridSize-1)

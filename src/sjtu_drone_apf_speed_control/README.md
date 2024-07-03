@@ -46,7 +46,7 @@
     ```
 
 2.  ```bash
-    cd /home/{USER}/sjtu_drone_control
+    cd /home/{USER}/sjtu_drone_apf
     ```
 
 3.  ```bash
@@ -58,12 +58,16 @@
 2. RViz
 3. Telecomando Remoto
 4. APF - Controllo autonomo
+- Si consiglia il seguente layout:
+![Layout Consigliato](screen.jpeg)
 
+# Avvio del drone
 ## Selezionare il waypoint
-- Premere 1 o 2 o 3
+- Premere 1 o 2 o 3 dalla finestra Telecomando Remoto
 
 ## Avviare l'autonomia del drone
-- Premere g
+- Premere t per il Takeoff dalla finestra Telecomando Remoto
+- Premere g per l'autonomia dalla finestra Telecomando Remoto
 
 #
 # 

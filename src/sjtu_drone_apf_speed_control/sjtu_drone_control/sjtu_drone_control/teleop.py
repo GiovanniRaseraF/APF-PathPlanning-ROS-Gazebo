@@ -37,9 +37,14 @@ t/l: takeoff/land (upper/lower case)
 q/e : increase/decrease linear and angular velocity (upper/lower case)
 A/D: rotate left/right
 r/f : rise/fall (upper/lower case)
-g: autonomy !
 
-h: to say Ciao sono Giovanni e Diletta
+CUSTOM:
+
+Waypoints:
+1, 2, 3 : Interest
+
+APF: 
+g: Toggle Autonomy !
 
 ---------------------------
 CTRL-C to quit

@@ -9,12 +9,12 @@ RUN apt-get update \
     && apt-get clean
 
 # Get gazebo binaries
-RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
-    && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add - \
-    && apt-get update \
+# RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
+#    && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add - \
+#    gazebo \
+# ros-humble-gazebo-ros-pkgs \
+RUN apt-get update \
     && apt-get install -y \
-    gazebo \
-    ros-humble-gazebo-ros-pkgs \
     python3-colcon-common-extensions python3-rosdep --no-install-recommends \
     && apt-get clean
 RUN rosdep init && rosdep update

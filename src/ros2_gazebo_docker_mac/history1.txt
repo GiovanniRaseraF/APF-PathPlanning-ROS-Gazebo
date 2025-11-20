@@ -1,0 +1,50 @@
+  843  pip3 install setuptools
+  844  clear
+  845  ls
+  846  python3
+  847  clear
+  848  ls
+  849  cd repos
+  850  ls
+  851  cd APF-PathPlanning-ROS-Gazebo
+  852  ls
+  853  cd src
+  854  ls
+  855  cd ros2_gazebo_docker_mac
+  856  ls
+  857  code . 
+  858  docker build -t ros2_jazzy .
+  859  x11
+  860  docker run -it ros2_jazzy bash
+  861  xhost
+  862  ls
+  863  xhost
+  864  ls
+  865  cd repos
+  866  ls
+  867  cd APF-PathPlanning-ROS-Gazebo
+  868  ls
+  869  cd src
+  870  ls
+  871  cd sjtu_drone_apf_speed_control
+  872  ls
+  873  cd ..
+  874  ls
+  875  cd ros2_gazebo_docker_mac
+  876  ls
+  877  docker iamges
+  878  docker image
+  879  docker images
+  880  docker network create ros-network
+  881  docker run -it --net ros-network ros2_jazzy
+  882  open -a XQuartz
+  883  IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+  884  echo $IP
+  885  ping $IP
+  886  docker run -d --name firefox -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix jess/firefox
+  887  touch sites.md
+  888  code . 
+  889  history > history1.txt
+  890  history | tail 50 | cat > history1.txt
+  891  tail -h
+  892  man tail

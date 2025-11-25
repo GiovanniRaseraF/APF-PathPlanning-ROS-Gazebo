@@ -9,6 +9,11 @@ import math
 
 DEFAULT_DIM_SIZE: int = 100
 
+# TODO: ragi control parameters
+α = 50
+β = 140
+s = 8
+
 class Obstacle2D():
     def __init__(self, x: float, y: float, r: float):
         print(f"Obstacle2D({x}, {y}, {r})")
@@ -26,7 +31,7 @@ class Goal2D():
 class APF2D():
     def __init__(self, gridSize: int = DEFAULT_DIM_SIZE):
         print(f"APF2D([{gridSize}][{gridSize}])")
-        self.obstacles: list(Obstacle2D) = []
+        self.obstacles: list[Obstacle2D] = []
         self.goal: Goal2D | None = None
         self.gridSize = gridSize
         self.x = np.arange(self.gridSize)
@@ -41,30 +46,29 @@ class APF2D():
     def calculate(self) -> None:
         for i in range(self.gridSize):
             for j in range(self.gridSize):
-                # finding the goal distance and obstacle distance
+                # Compute the goal
                 if self.goal is not None:
                     d_goal = np.sqrt((self.goal.x - self.X[i][j])**2 + ((self.goal.y - self.Y[i][j]))**2)
-                # d_obstacle = np.sqrt((obstacle[0]-X[i][j])**2 + (obstacle[1]-Y[i][j])**2)
-
-                #finding theta correspoding to the goal and obstacle 
                     theta_goal = np.arctan2(self.goal.y - self.Y[i][j], self.goal.x  - self.X[i][j])
-                # theta_obstacle = np.arctan2(obstacle[1] - Y[i][j], obstacle[0]  - X[i][j])
+
+                    if d_goal < self.goal.r+s:
+                        self.delx[i][j] += (50 * (d_goal-self.goal.r) * np.cos(theta_goal))
+                        self.dely[i][j] += (50 * (d_goal-self.goal.r) * np.sin(theta_goal))
+                    if d_goal >= self.goal.r+s:
+                        self.delx[i][j] += 50 * s * np.cos(theta_goal)
+                        self.dely[i][j] += 50 * s * np.sin(theta_goal)
+
+                # Compute one obstacle
+                # TODO: ragi add full obstacles control
+                if len(self.obstacles) > 0:
+                    d_obstacle = np.sqrt((self.obstacles[0].x - self.X[i][j])**2 + (self.obstacles[0].y - self.Y[i][j])**2)
+                    theta_obstacle = np.arctan2(self.obstacles[0].y - self.Y[i][j], self.obstacles[0].x  - self.X[i][j])
         
-                # if (flag_Obstacle):
-                #     if d_obstacle < r:
-                #         delx[i][j] += 0
-                #         dely[i][j] += 0
-                #     elif (d_obstacle>=r and d_obstacle<r+s) :
-                #         delx[i][j] += -β * (s+r-d_obstacle) * np.cos(theta_obstacle)
-                #         dely[i][j] += -β * (s+r-d_obstacle) * np.sin(theta_obstacle) 
-                #     elif d_obstacle>=r+s:
-                #         delx[i][j] += 0 
-                #         dely[i][j] += 0 
+                    if (d_obstacle >= self.obstacles[0].r and d_obstacle<self.obstacles[0].r + s) :
+                        self.delx[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.cos(theta_obstacle)
+                        self.dely[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.sin(theta_obstacle) 
+                    else:
+                        self.delx[i][j] = 0
+                        self.dely[i][j] = 0
       
-                # if (flag_Goal):    
-                #     if d_goal <r+s:
-                #         delx[i][j] += (50 * (d_goal-r) * np.cos(theta_goal))
-                #         dely[i][j] += (50 * (d_goal-r) * np.sin(theta_goal))
-                #     if d_goal>=r+s:
-                #         delx[i][j] += 50 * s * np.cos(theta_goal)
-                #         dely[i][j] += 50 * s * np.sin(theta_goal)
+                    

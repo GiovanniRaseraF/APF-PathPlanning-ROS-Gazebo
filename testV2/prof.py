@@ -3,10 +3,10 @@ import argparse
 
 from apf import *
 
-def main(profiler: cProfile.Profile):
+def run(profiler: cProfile.Profile, gridSize: int):
     goal = Goal2D(100, 100, 1)
     obs1 = Obstacle2D(0, 0, 1)
-    field = APF2D()
+    field = APF2D(gridSize)
     field.update_goal(goal)
     ret = field.insert_obstacle(obs1)
 
@@ -15,14 +15,14 @@ def main(profiler: cProfile.Profile):
     field.calculate()
     profiler.disable()
 
-    # Save and run 
-    # snakeviz field_calculate.prof
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog='Profiling APF')
-    parser.add_argument('filename', help='file to dump profiling')
+    parser = argparse.ArgumentParser(prog='Profiling APF2D')
+    parser.add_argument('filename', help='filename to dump profiling')
+    parser.add_argument('size', help='size of the APF grid', type=int, default=DEFAULT_DIM_SIZE)
     args = parser.parse_args()
     
     profiler = cProfile.Profile()
-    main(profiler)
-    profiler.dump_stats(args.filename)
+
+    run(profiler, args.size)
+
+    profiler.dump_stats(f"{args.size}_{args.filename}")

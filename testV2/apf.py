@@ -4,8 +4,6 @@ Author: Giovanni Rasera
 """
 
 import numpy as np
-import time
-import math
 
 DEFAULT_DIM_SIZE: int = 100
 
@@ -42,6 +40,12 @@ class APF2D():
 
     def update_goal(self, new_goal : Goal2D) -> None:
         self.goal = new_goal
+    
+    def insert_obstacle(self, new_obstacle: Obstacle2D) -> int:
+        self.obstacles.append(new_obstacle)
+
+        # TODO: this should be the id of the obstacle to be able to delete it
+        return 0
 
     def calculate(self) -> None:
         for i in range(self.gridSize):
@@ -52,8 +56,8 @@ class APF2D():
                     theta_goal = np.arctan2(self.goal.y - self.Y[i][j], self.goal.x  - self.X[i][j])
 
                     if d_goal < self.goal.r+s:
-                        self.delx[i][j] += (50 * (d_goal-self.goal.r) * np.cos(theta_goal))
-                        self.dely[i][j] += (50 * (d_goal-self.goal.r) * np.sin(theta_goal))
+                        self.delx[i][j] += (50 * (d_goal - self.goal.r) * np.cos(theta_goal))
+                        self.dely[i][j] += (50 * (d_goal - self.goal.r) * np.sin(theta_goal))
                     if d_goal >= self.goal.r+s:
                         self.delx[i][j] += 50 * s * np.cos(theta_goal)
                         self.dely[i][j] += 50 * s * np.sin(theta_goal)
@@ -62,7 +66,7 @@ class APF2D():
                 # TODO: ragi add full obstacles control
                 if len(self.obstacles) > 0:
                     d_obstacle = np.sqrt((self.obstacles[0].x - self.X[i][j])**2 + (self.obstacles[0].y - self.Y[i][j])**2)
-                    theta_obstacle = np.arctan2(self.obstacles[0].y - self.Y[i][j], self.obstacles[0].x  - self.X[i][j])
+                    theta_obstacle = np.arctan2(self.obstacles[0].y - self.Y[i][j], self.obstacles[0].x - self.X[i][j])
         
                     if (d_obstacle >= self.obstacles[0].r and d_obstacle<self.obstacles[0].r + s) :
                         self.delx[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.cos(theta_obstacle)

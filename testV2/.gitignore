@@ -4,3 +4,7 @@ include/
 share/
 .DS_Store
 pyvenv.cfg
+__pycache__/*
+__pycache__/
+__pycache__*
+*.prof

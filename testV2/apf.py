@@ -15,16 +15,16 @@ s = 8
 class Obstacle2D():
     def __init__(self, x: float, y: float, r: float):
         print(f"Obstacle2D({x}, {y}, {r})")
-        self.x = np.array([x])
-        self.y = np.array([y])
-        self.r = np.array([r])
+        self.x = np.array(x)
+        self.y = np.array(y)
+        self.r = np.array(r)
 
 class Goal2D():
     def __init__(self, x: float, y: float, r: float):
         print(f"Goal2D({x}, {y}, {r})")
-        self.x = np.array([x])
-        self.y = np.array([y])
-        self.r = np.array([r])
+        self.x = np.array(x)
+        self.y = np.array(y)
+        self.r = np.array(r)
 
 class APF2D():
     def __init__(self, gridSize: int = DEFAULT_DIM_SIZE):
@@ -38,6 +38,8 @@ class APF2D():
         self.delx = np.zeros_like(self.X)
         self.dely = np.zeros_like(self.Y)
 
+    # TODO: ragi this needs to update the field ???
+    # need to decide if this is a good idea
     def update_goal(self, new_goal : Goal2D) -> None:
         self.goal = new_goal
     
@@ -51,14 +53,14 @@ class APF2D():
         for i in range(self.gridSize):
             for j in range(self.gridSize):
                 # Compute the goal
-                if self.goal is not None:
+                if self.goal:
                     d_goal = np.sqrt((self.goal.x - self.X[i][j])**2 + ((self.goal.y - self.Y[i][j]))**2)
                     theta_goal = np.arctan2(self.goal.y - self.Y[i][j], self.goal.x  - self.X[i][j])
 
-                    if d_goal < self.goal.r+s:
+                    if d_goal < self.goal.r + s:
                         self.delx[i][j] += (50 * (d_goal - self.goal.r) * np.cos(theta_goal))
                         self.dely[i][j] += (50 * (d_goal - self.goal.r) * np.sin(theta_goal))
-                    if d_goal >= self.goal.r+s:
+                    else:
                         self.delx[i][j] += 50 * s * np.cos(theta_goal)
                         self.dely[i][j] += 50 * s * np.sin(theta_goal)
 
@@ -74,5 +76,3 @@ class APF2D():
                     else:
                         self.delx[i][j] = 0
                         self.dely[i][j] = 0
-      
-                    

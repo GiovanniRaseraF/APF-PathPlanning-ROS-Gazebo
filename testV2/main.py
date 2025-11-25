@@ -1,21 +1,24 @@
-import cProfile
 from apf import *
+from viz import *
+
+# plotting
+plt.ion()
 
 def main():
-    goal = Goal2D(100, 100, 1)
-    obs1 = Obstacle2D(0, 0, 1)
-    field = APF2D()
-    field.update_goal(goal)
-    ret = field.insert_obstacle(obs1)
+    goal = Goal2D(9, 9, 1)
+    obs1 = Obstacle2D(5, 5, 1)
+    field = APF2D(10)
 
-    # Profile algo
-    profiler = cProfile.Profile()
-    profiler.enable()
+    field.update_goal(goal)
+    field.insert_obstacle(obs1)
 
     field.calculate()
 
-    profiler.disable()
-    profiler.dump_stats("example.prof")
+    draw(field)
+
+    input("Enter to close >>>")
+
+    plt.close()
 
 if __name__ == "__main__":
     main()

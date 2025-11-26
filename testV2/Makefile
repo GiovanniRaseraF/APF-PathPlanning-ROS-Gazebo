@@ -1,6 +1,6 @@
 env:
 	python3 -m venv .
-	./bin/pip3 install numpy matplotlib PyQt5 opencv-python snakeviz
+	./bin/pip3 install numpy matplotlib PyQt5 opencv-python snakeviz open3d
 
 run:
 	python3 -m venv .

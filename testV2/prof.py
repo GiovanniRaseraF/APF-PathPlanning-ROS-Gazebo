@@ -1,3 +1,8 @@
+"""
+Title: Calculate APF
+Author: Giovanni Rasera
+"""
+
 import cProfile
 import argparse
 

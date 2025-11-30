@@ -74,5 +74,5 @@ class APF2D():
                         self.delx[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.cos(theta_obstacle)
                         self.dely[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.sin(theta_obstacle) 
                     else:
-                        self.delx[i][j] = 0
-                        self.dely[i][j] = 0
+                        self.delx[i][j] += 0
+                        self.dely[i][j] += 0

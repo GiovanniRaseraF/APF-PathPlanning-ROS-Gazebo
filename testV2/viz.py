@@ -54,9 +54,6 @@ def get_arrow(origin, vector, color=[0, 0, 1], scale=1.0):
     """
     Creates an arrow geometry located at 'origin' pointing in 'vector' direction.
     """
-    # 1. Normalize the vector to get direction, use length for scale if desired
-
-    # 2. Create the arrow (defaults to pointing up +Z)
     arrow = o3d.geometry.TriangleMesh.create_arrow(
         cylinder_radius=0.01 * scale,
         cylinder_height=0.1 * scale,
@@ -64,19 +61,18 @@ def get_arrow(origin, vector, color=[0, 0, 1], scale=1.0):
         cone_height=0.02 * scale
     )
     
-    # 3. Rotate the arrow to align with the vector on the XY plane
+    # Rotate 
     R_y = arrow.get_rotation_matrix_from_xyz((0, np.pi / 2, 0))
     arrow.rotate(R_y, center=(0, 0, 0))
     
-    # Next, rotate around Z to match the vector's angle in the XY plane
     angle = np.arctan2(vector[1], vector[0])
     R_z = arrow.get_rotation_matrix_from_xyz((0, 0, angle))
     arrow.rotate(R_z, center=(0, 0, 0))
 
-    # 4. Translate to position
+    # Translate to position
     arrow.translate(origin)
 
-    # 5. Color
+    # Color
     arrow.paint_uniform_color(color)
     
     return arrow

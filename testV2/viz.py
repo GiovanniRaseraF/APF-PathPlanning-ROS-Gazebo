@@ -57,8 +57,8 @@ def get_arrow(origin, vector, color=[0, 0, 1], scale=1.0):
     arrow = o3d.geometry.TriangleMesh.create_arrow(
         cylinder_radius=0.01 * scale,
         cylinder_height=0.1 * scale,
-        cone_radius=0.02 * scale,
-        cone_height=0.02 * scale
+        cone_radius=0.04 * scale,
+        cone_height=0.04 * scale
     )
     
     # Rotate 

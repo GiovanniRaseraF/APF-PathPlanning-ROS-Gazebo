@@ -13,66 +13,42 @@ DEFAULT_DIM_SIZE: int = 100
 s = 8
 
 class Obstacle2D():
-    def __init__(self, x: float, y: float, r: float):
-        print(f"Obstacle2D({x}, {y}, {r})")
+    def __init__(self, x: float, y: float):
+        print(f"Obstacle2D({x}, {y})")
         self.x = np.array(x)
         self.y = np.array(y)
-        self.r = np.array(r)
 
 class Goal2D():
-    def __init__(self, x: float, y: float, r: float):
-        print(f"Goal2D({x}, {y}, {r})")
+    def __init__(self, x: float, y: float):
+        print(f"Goal2D({x}, {y})")
         self.x = np.array(x)
         self.y = np.array(y)
-        self.r = np.array(r)
 
 class APF2D():
-    def __init__(self, gridSize: int = DEFAULT_DIM_SIZE):
-        print(f"APF2D([{gridSize}][{gridSize}])")
-        self.obstacles: list[Obstacle2D] = []
+    def __init__(self, s_ize: int = DEFAULT_DIM_SIZE):
+        print(f"APF2D([{s_ize}][{s_ize}])")
+        self.obstacle: Obstacle2D | None = None
         self.goal: Goal2D | None = None
-        self.gridSize = gridSize
-        self.x = np.arange(self.gridSize)
-        self.y = np.arange(self.gridSize)
-        self.X, self.Y = np.meshgrid(self.x, self.y)
-        self.delx = np.zeros_like(self.X)
-        self.dely = np.zeros_like(self.Y)
+        self.s_ize = s_ize
+        self.a = [i + 0.5 for i in range(s_ize)]
+        self.b = [i + 0.5 for i in range(s_ize)]
+        self.p0 = [(x, y) for x in self.a for y in self.b]
+        self.p1 = (-7.9, 0.4)
+        self.p2 = (4.8, 0.56)
+        self.v1 = [(xp1 - self.p1[0], yp1 - self.p1[1]) for (xp1, yp1) in self.p0]
+        self.v2 = [(-(xp2 - self.p2[0]), -(yp2 - self.p2[1])) for (xp2, yp2) in self.p0]
 
     # TODO: ragi this needs to update the field ???
     # need to decide if this is a good idea
-    def update_goal(self, new_goal : Goal2D) -> None:
+    def update_goal(self, new_goal : Goal2D) -> int:
         self.goal = new_goal
+        return 0
     
-    def insert_obstacle(self, new_obstacle: Obstacle2D) -> int:
-        self.obstacles.append(new_obstacle)
-
-        # TODO: this should be the id of the obstacle to be able to delete it
+    def update_obstacle(self, new_obstacle: Obstacle2D) -> int:
+        self.obstacle = new_obstacle
         return 0
 
     def calculate(self) -> None:
-        for i in range(self.gridSize):
-            for j in range(self.gridSize):
-                # Compute the goal
-                if self.goal:
-                    d_goal = np.sqrt((self.goal.x - self.X[i][j])**2 + ((self.goal.y - self.Y[i][j]))**2)
-                    theta_goal = np.arctan2(self.goal.y - self.Y[i][j], self.goal.x  - self.X[i][j])
-
-                    if d_goal < self.goal.r + s:
-                        self.delx[i][j] += (50 * (d_goal - self.goal.r) * np.cos(theta_goal))
-                        self.dely[i][j] += (50 * (d_goal - self.goal.r) * np.sin(theta_goal))
-                    else:
-                        self.delx[i][j] += 50 * s * np.cos(theta_goal)
-                        self.dely[i][j] += 50 * s * np.sin(theta_goal)
-
-                # Compute one obstacle
-                # TODO: ragi add full obstacles control
-                if len(self.obstacles) > 0:
-                    d_obstacle = np.sqrt((self.obstacles[0].x - self.X[i][j])**2 + (self.obstacles[0].y - self.Y[i][j])**2)
-                    theta_obstacle = np.arctan2(self.obstacles[0].y - self.Y[i][j], self.obstacles[0].x - self.X[i][j])
-        
-                    if (d_obstacle >= self.obstacles[0].r and d_obstacle<self.obstacles[0].r + s) :
-                        self.delx[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.cos(theta_obstacle)
-                        self.dely[i][j] += -β * (s + self.obstacles[0].r - d_obstacle) * np.sin(theta_obstacle) 
-                    else:
-                        self.delx[i][j] += 0
-                        self.dely[i][j] += 0
+        for i in range(self.s_ize):
+            for j in range(self.s_ize):
+                pass

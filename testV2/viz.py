@@ -83,8 +83,8 @@ def create_vector_field(field):
     """
     combined_mesh = o3d.geometry.TriangleMesh()
     
-    for x in range(0, int(field.gridSize)):
-        for y in range(0, int(field.gridSize)):
+    for x in range(0, int(field.s_ize)):
+        for y in range(0, int(field.s_ize)):
             pos = np.array([x, y])
 
             # TODO: ragi add vector field creation
@@ -95,9 +95,9 @@ def create_vector_field(field):
 
 def draw(field: APF2D):
     # Build scene
-    grid = create_grid(field.gridSize)
+    grid = create_grid(field.s_ize)
     first_point = create_ball([0, 0, 0], radius=0.1)
-    last_point = create_ball([int(field.gridSize), int(field.gridSize), 0], radius=0.1)
+    last_point = create_ball([int(field.s_ize), int(field.s_ize), 0], radius=0.1)
 
     # Goal
     goal_point = first_point

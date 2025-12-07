@@ -50,70 +50,35 @@ def create_ball(position, radius=1.0, color=[1, 0, 0]):
 
     return sphere
 
-def get_arrow(origin, vector, color=[0, 0, 1], scale=1.0):
-    """
-    Creates an arrow geometry located at 'origin' pointing in 'vector' direction.
-    """
-    arrow = o3d.geometry.TriangleMesh.create_arrow(
-        cylinder_radius=0.01 * scale,
-        cylinder_height=0.1 * scale,
-        cone_radius=0.04 * scale,
-        cone_height=0.04 * scale
-    )
-    
-    # Rotate 
-    R_y = arrow.get_rotation_matrix_from_xyz((0, np.pi / 2, 0))
-    arrow.rotate(R_y, center=(0, 0, 0))
-    
-    angle = np.arctan2(vector[1], vector[0])
-    R_z = arrow.get_rotation_matrix_from_xyz((0, 0, angle))
-    arrow.rotate(R_z, center=(0, 0, 0))
-
-    # Translate to position
-    arrow.translate(origin)
-
-    # Color
-    arrow.paint_uniform_color(color)
-    
-    return arrow
-
-def create_vector_field(field):
-    """
-    Generates a single mesh containing arrows for the entire grid.
-    """
-    combined_mesh = o3d.geometry.TriangleMesh()
-    
-    for x in range(0, int(field.s_ize)):
-        for y in range(0, int(field.s_ize)):
-            pos = np.array([x, y])
-
-            # TODO: ragi add vector field creation
-            arrow = get_arrow(origin=[x+0.5, y+0.5, 0], vector=[field.delx[x][y], field.dely[x][y]], scale=3.0)
-            combined_mesh += arrow
-
-    return combined_mesh
+def create_from_array(arr, radius=0.05, color=[0, 0, 0]):
+    balls = []
+    for p in arr:
+        ball = create_ball([p[0], p[1], 0], radius=radius, color=color)
+        balls.append(ball)
+    return balls
 
 def draw(field: APF2D):
     # Build scene
-    grid = create_grid(field.s_ize)
-    first_point = create_ball([0, 0, 0], radius=0.1)
-    last_point = create_ball([int(field.s_ize), int(field.s_ize), 0], radius=0.1)
+    grid = create_grid(field.s_ize*2, step=1)
+    first_point = create_ball([0, 0, 0], radius=0.05)
+    last_point = create_ball([field.s_ize, field.s_ize, 0], radius=0.05, color=[1, 0, 0])
 
-    # Goal
-    goal_point = first_point
-    if field.goal:
-        goal_point = create_ball([int(field.goal.x), int(field.goal.y), 0], radius=field.goal.r, color=[0, 1, 0])
-    
-    # Obstacles
-    obstacles_points = []
-    for obs in field.obstacles:
-        obs_point = create_ball([int(obs.x), int(obs.y), 0], radius=obs.r, color=[1, 0, 0])
-        obstacles_points.append(obs_point)
+    # # Goal
+    goal_point = create_ball([field.goal[0], field.goal[1], 0], radius=0.05, color=[0, 1, 0])
+    obstacle_point = create_ball([field.obstacle[0], field.obstacle[1], 0], radius=0.05, color=[1, 0, 0])
 
-    # Field Speeds
-    vector_field = create_vector_field(field)
+    points_p0 = create_from_array(field.halfPoints)
+    points_v3 = create_from_array(field.v3, radius=0.02, color=[0, 1, 1])
+    # # Obstacles
+    # obstacles_points = []
+    # for obs in field.obstacles:
+    #     obs_point = create_ball([int(obs.x), int(obs.y), 0], radius=obs.r, color=[1, 0, 0])
+    #     obstacles_points.append(obs_point)
+
+    # # Field Speeds
+    # vector_field = create_vector_field(field)
 
     vis = o3d.visualization.Visualizer()
-    data3d = [grid, goal_point, *obstacles_points, first_point, last_point, vector_field]
+    data3d = [grid, *points_p0, *points_v3, goal_point, obstacle_point, first_point, last_point]
 
     return vis, data3d

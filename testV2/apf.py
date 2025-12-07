@@ -51,29 +51,28 @@ class APF2D():
     def __init__(self, s_ize: int = DEFAULT_DIM_SIZE):
         print(f"APF2D([{s_ize}][{s_ize}])")
         self.s_ize = s_ize
-        self.a = np.array([i for i in range(0, s_ize)])
-        self.b = np.array([i for i in range(0, s_ize)])
-        self.p0 = np.array([(y, x) for x in self.a for y in self.b])
-        self.p1 = np.array([5, 0])
-        self.p2 = np.array([5, 10])
-        self.v1 = np.array([(xp1 - self.p1[0], yp1 - self.p1[1]) for (xp1, yp1) in self.p0])
-        self.v2 = np.array([(-(xp2 - self.p2[0]), -(yp2 - self.p2[1])) for (xp2, yp2) in self.p0])
+        self.a = np.array([i+0.5 for i in range(0, s_ize+1)])
+        self.b = np.array([i+0.5 for i in range(0, s_ize+1)])
+        self.halfPoints = np.array([(y, x) for x in self.a for y in self.b])
+        # goal
+        self.goal = np.array([5, 0])
+        # obstacle
+        self.obstacle = np.array([5, 10])
+        self.v1 = np.array([(xp1 - self.goal[0], yp1 - self.goal[1]) for (xp1, yp1) in self.halfPoints])
+        self.v2 = np.array([(-(xp2 - self.obstacle[0]), -(yp2 - self.obstacle[1])) for (xp2, yp2) in self.halfPoints])
+
         self.c = 100.0
         self.t = 0.5
-        self.v3 = np.array([calc_field(p, v1, v2, self.c, self.t) for p, v1, v2 in zip(self.p0, self.v1, self.v2)])
-        print(f"v3: {self.v3[:5]}")
+        self.calculate()
 
     # TODO: ragi this needs to update the field ???
-    # need to decide if this is a good idea
-    # def update_goal(self, new_goal : Goal2D) -> int:
-    #     self.goal = new_goal
-    #     return 0
+    def update_goal(self, new_goal : np.array) -> int:
+        self.goal = new_goal
+        return 0
     
-    # def update_obstacle(self, new_obstacle: Obstacle2D) -> int:
-    #     self.obstacle = new_obstacle
-    #     return 0
+    def update_obstacle(self, new_obstacle: np.array) -> int:
+        self.obstacle = new_obstacle
+        return 0
 
     def calculate(self) -> None:
-        for i in range(self.s_ize):
-            for j in range(self.s_ize):
-                pass
+        self.v3 = np.array([calc_field(p, v1, v2, self.c, self.t) for p, v1, v2 in zip(self.halfPoints, self.v1, self.v2)])

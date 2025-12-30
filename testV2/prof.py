@@ -5,19 +5,13 @@ Author: Giovanni Rasera
 
 import cProfile
 import argparse
-
+from main import main
 from apf import *
 
 def run(profiler: cProfile.Profile, gridSize: int):
-    goal = Goal2D(100, 100, 1)
-    obs1 = Obstacle2D(0, 0, 1)
-    field = APF2D(gridSize)
-    field.update_goal(goal)
-    ret = field.insert_obstacle(obs1)
-
     # Profile algo
     profiler.enable()
-    field.calculate()
+    main(gridSize=gridSize)
     profiler.disable()
 
 if __name__ == "__main__":

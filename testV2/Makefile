@@ -6,8 +6,8 @@ run:
 	./bin/python3 main.py
 
 prof:
-	./bin/python3 prof.py field_calculate.prof 1000
-	./bin/snakeviz 1000_field_calculate.prof
+	./bin/python3 prof.py field_calculate.prof 40
+	./bin/snakeviz 40_field_calculate.prof
 
 clear:
 	rm -rf ./bin

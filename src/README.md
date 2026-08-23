@@ -12,6 +12,18 @@ This package is compatible with ROS 2 Jazzy (Ubuntu 24.04) and Gazebo Harmonic (
 
 # Downloading and building
 
+# Build:
+## Every time
+### run this from src folder !!
+```bash
+rosdep install -r -y --from-paths . --ignore-src --rosdistro $ROS_DISTRO && colcon build --packages-select-regex sjtu*
+```
+## Run
+```bash
+source install/setup.bash
+ros2 launch  sjtu_drone_bringup sjtu_drone_bringup.launch.py
+```
+
 ```
 cd ~/git && git clone git@github.com:NovoG93/sjtu_drone.git -b ros2
 cd ~/ros2_ws/src && ln -s ~/git/sjtu_drone
@@ -158,12 +170,5 @@ For more see the following image:
 - [Window Washing Drone](https://github.com/ayushchakra/window-washing-drone): is a project that aims to automate the process of window washing using a drone. 
 - [ChatDrones](https://github.com/Gaurang-1402/ChatDrones): is a project that merges Large Language Models with drone control, enabling users to operate drones through simple natural language commands. It includes a user-friendly web application, allowing for easy input of commands in multiple languages and control of drone movements such as takeoff, landing, and directional navigation.
 
-# Build:
-2. build:
 
-# Every time
-rosdep install -r -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO && colcon build --packages-select-regex sjtu*
-source install/setup.bash
-ros2 launch  sjtu_drone_bringup sjtu_drone_bringup.launch.py
-```
 

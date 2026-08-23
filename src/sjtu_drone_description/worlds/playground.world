@@ -493,7 +493,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/number1/meshes/number.dae</uri>
+              <uri>package://sjtu_drone_description/model/number1/meshes/number.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -514,7 +514,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/number1/meshes/number.dae</uri>
+              <uri>package://sjtu_drone_description/model/number1/meshes/number.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -535,7 +535,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/number1/meshes/number.dae</uri>
+              <uri>package://sjtu_drone_description/model/number1/meshes/number.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -556,7 +556,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/number1/meshes/number.dae</uri>
+              <uri>package://sjtu_drone_description/model/number1/meshes/number.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -576,7 +576,7 @@
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/control_console/meshes/console.dae</uri>
+              <uri>package://sjtu_drone_description/model/control_console/meshes/console.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -811,7 +811,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -849,7 +849,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -887,7 +887,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -925,7 +925,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -963,7 +963,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1001,7 +1001,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1039,7 +1039,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1077,7 +1077,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1115,7 +1115,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1153,7 +1153,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1191,7 +1191,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1229,7 +1229,7 @@
           <geometry>
             <mesh>
               <scale>10 10 10</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
+              <uri>package://sjtu_drone_description/model/construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1266,7 +1266,7 @@
           <geometry>
             <mesh>
               <scale>1.5 1.5 1.5</scale>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/dumpster/meshes/dumpster.dae</uri>
+              <uri>package://sjtu_drone_description/model/dumpster/meshes/dumpster.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -1667,7 +1667,7 @@
           <pose>0 0 0.02 0.04 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
+              <uri>package://sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1727,7 +1727,7 @@
           <pose>0 0 -0.02 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_walking/meshes/walking.dae</uri>
+              <uri>package://sjtu_drone_description/model/person_walking/meshes/walking.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1787,7 +1787,7 @@
           <pose>0 0 0.02 0.04 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
+              <uri>package://sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1847,7 +1847,7 @@
           <pose>0 0 0.02 0.04 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
+              <uri>package://sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1907,7 +1907,7 @@
           <pose>0 0 0.02 0.04 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
+              <uri>package://sjtu_drone_description/model/person_standing/meshes/standing.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1921,7 +1921,7 @@
       <model name="Oak_Tree2">
         <include>
           <static>true</static>
-          <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/person_standing</uri>
+          <uri>package://sjtu_drone_description/model/person_standing</uri>
         </include>
       </model>
       <pose>-2 0 0 0 0 0</pose>

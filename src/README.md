@@ -158,30 +158,10 @@ For more see the following image:
 - [Window Washing Drone](https://github.com/ayushchakra/window-washing-drone): is a project that aims to automate the process of window washing using a drone. 
 - [ChatDrones](https://github.com/Gaurang-1402/ChatDrones): is a project that merges Large Language Models with drone control, enabling users to operate drones through simple natural language commands. It includes a user-friendly web application, allowing for easy input of commands in multiple languages and control of drone movements such as takeoff, landing, and directional navigation.
 
-# How to fix:
-1. fix the path to the models in the world file:
-2. Download the cache into sjtu_drone_description in a folder callde MODEL 
-3. the model foldeer should contain the foders for the world model
-4. now in playground.world
-```bash
-<mesh>
-    <uri>file:///home/fdsa/ros2_ws/src/sjtu_drone/sjtu_drone_description/model/number1/meshes/number.dae</uri>
-</mesh>
-```
-
+# Build:
 2. build:
-```bash
-# One time:
-mkdir ~/git
-mkdir ~/ros2_ws
-cd ~/ros2_ws
-mkdir src
-
-cd ~/git && git clone git@github.com:NovoG93/sjtu_drone.git -b jazzy
-cd ~/ros2_ws/src && ln -s ~/git/sjtu_drone
 
 # Every time
-cd ~/ros2_ws/
 rosdep install -r -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO && colcon build --packages-select-regex sjtu*
 source install/setup.bash
 ros2 launch  sjtu_drone_bringup sjtu_drone_bringup.launch.py

@@ -13,3 +13,15 @@ __global__ void square_kernel(const float* d_in, float* d_out, int size) {
 void run_cuda_kernel() {
     std::cout << "Will run the cuda kernel" << std::endl;
 }
+
+Field::Field(){
+    std::cout << "Field()" << std::endl;
+}
+
+void Field::generate(){
+    std::cout << "Field::generate()" << std::endl;
+}
+
+void Field::query(){
+    std::cout << "Field::query()" << std::endl;
+}

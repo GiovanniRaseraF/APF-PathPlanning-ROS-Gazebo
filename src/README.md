@@ -13,15 +13,27 @@ This package is compatible with ROS 2 Jazzy (Ubuntu 24.04) and Gazebo Harmonic (
 # Downloading and building
 
 # Build:
-## Every time
-### run this from src folder !!
+## Quickstart with Makefile
+A `Makefile` is provided in `src/` to easily build and run targets:
+
+| Command | Description |
+|---|---|
+| `make dep` | Install ROS dependencies with `rosdep` |
+| `make do` *(or `make do system`)* | Build all packages (`colcon build`) |
+| `make do autopilot` | Build only `sjtu_drone_autopilot` |
+| `make run` *(or `make run system`)* | Source environment and launch full system simulation |
+| `make run autopilot` | Source environment and launch autopilot node |
+| `make p` | Quick git add, commit, and push |
+
+## Manual Build & Run
+### Every time (from `src` folder)
 ```bash
 rosdep install -r -y --from-paths . --ignore-src --rosdistro $ROS_DISTRO && colcon build --packages-select-regex sjtu*
 ```
-## Run
+### Run
 ```bash
 source install/setup.bash
-ros2 launch  sjtu_drone_bringup sjtu_drone_bringup.launch.py
+ros2 launch sjtu_drone_bringup sjtu_drone_bringup.launch.py
 ```
 
 ```
